@@ -76,5 +76,7 @@
 
 
 ## 开发日志
+###
+1. github地址 https://github.com/zgcjsolitude/originsystem-vue3
 ### localStorage公共信息
 1. OSlocalLang -- 本地语言选择本地化存储key值
