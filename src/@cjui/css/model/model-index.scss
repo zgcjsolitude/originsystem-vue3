@@ -1,0 +1,43 @@
+// 网页基础全局样式模板
+// -------------------------
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+*:focus { 
+    outline: none;
+}
+ul {
+    list-style-type: none;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    position: relative;
+}
+
+/* 移动端，分辨率适配，100px = 1rem */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 26.66666667vw;
+    }
+    body {
+        font-size: 0.16rem;
+    }
+}
+
+/* PC端 */
+@media screen and (min-width: 769px) {
+    // 系统默认样式设置
+    // -------------------------
+    html {
+        font-size: 625%;
+    }
+    body {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,17 @@
+/*****
+  * =========== osa-xxx 非色彩系全局样式 ================ 
+  *** 
+  * === 
+*/
+
+// 数据看板卡片样式
+:deep(.osa-card-board) {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+
+    .osa-card-title {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,63 @@
+@import './_variable.scss';
+@import './element-ui/el-theme-night-global';
+
+.OSA-flex-box {
+    display: flex;
+    flex-wrap: wrap;
+
+    .flex-left {
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+    .flex-unset {
+        margin-bottom: 10px;
+    }
+    .flex-right {
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    .flex-item + .flex-item {
+        margin-left: 10px;
+    }
+}
+
+.OSA-form {
+    padding: 50px;
+
+    .form-input {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+    .form-input > label {
+        text-align: justify;
+        text-align-last: justify;
+        padding-right: 0.5em;
+        width: 80px;
+    }
+    .form-input > span {
+        margin-right: 1em;
+    }
+    .form-input.is-top {
+        align-items: unset;
+    }
+    .form-btn {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .form-btn .el-button {
+        margin-left: 0;
+        margin-bottom: 0.5em;
+    }
+    .form-btn.is-w100 .el-button {
+        width: 100%;
+    }
+
+    .el-input,
+    .el-select,
+    .el-textarea,
+    .el-input-number {
+      flex: 1;
+    }
+}

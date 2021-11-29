@@ -1,0 +1,485 @@
+
+// default color style
+// -------------------------
+.cjui-loading-theme {
+    --cjuiLoadingWidth: 50px;
+    --cjuiLoadingHeight: 50px;
+    --cjuiLoadingColor: #12f3d5;
+}
+// -------------------------
+.cjui-loading-theme {
+    width: var(--cjuiLoadingWidth);
+    height: var(--cjuiLoadingHeight);
+    display: inline-block;
+    background: transparent;
+    position: relative;
+    box-sizing: border-box;
+}
+.cjui-loading-theme > span {
+    box-sizing: border-box;
+}
+
+// themes style
+// -------------------------
+// 圆环旋转
+@keyframes cjui-ring-rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); } 
+}
+.cjui-loading-theme--ring-rotate_0 {
+    background-color: var(--cjuiLoadingColor);
+    border: 3px solid var(--cjuiLoadingColor);
+    border-left: 0;
+    border-radius: 100%;
+    animation-fill-mode: both;
+    border-bottom-color: transparent;
+    background: transparent !important;
+    animation: cjui-ring-rotate 0.75s 0s linear infinite; 
+}
+
+// 双圆环旋转 放大 + 旋转
+@keyframes cjui-ring-ring {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(0.6); }
+    100% { transform: rotate(360deg) scale(1); } 
+}
+.cjui-loading-theme--ring-ring_0 {
+    &:before, &:after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        animation-fill-mode: both;
+        border: 2px solid;
+        border-color: var(--cjuiLoadingColor) transparent;
+        border-radius: 100%;
+        animation: cjui-ring-ring 1s 0s ease-in-out infinite;
+    }
+    &:before {
+        height: 70%;
+        width: 70%;
+        left: 15%;
+        top: 15%;
+    }
+    &:after {
+        width: 30%;
+        height: 30%;
+        top: 35%;
+        left: 35%;
+        animation-duration: 0.5s;
+        animation-direction: reverse;
+    }
+}
+
+// 翻转正方形
+@keyframes cjui-square-rolling {
+    25% { transform: perspective(100px) rotateX(180deg) rotateY(0); }
+    50% { transform: perspective(100px) rotateX(180deg) rotateY(180deg); }
+    75% { transform: perspective(100px) rotateX(0) rotateY(180deg); }
+    100% { transform: perspective(100px) rotateX(0) rotateY(0); } 
+}
+.cjui-loading-theme--square-rolling_0 {
+    background-color: var(--cjuiLoadingColor);
+    animation-fill-mode: both;
+    animation: cjui-square-rolling 3s 0s cubic-bezier(.09, .57, .49, .9) infinite; 
+}
+
+// 圆心波纹运动  放大 + 消失
+@keyframes cjui-wave {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; } 
+}
+.cjui-loading-theme--wave_0 {
+    background-color: var(--cjuiLoadingColor);
+    border-radius: 100%;
+    animation-fill-mode: both;
+    animation: cjui-wave 1s 0s ease-in-out infinite; 
+}
+
+// 圆圈圆心运动  放大 + 旋转
+@keyframes cjui-ring-circle-reduce {
+    30% { transform: scale(0.3); }
+    100% { transform: scale(1); } 
+}
+@keyframes cjui-ring-circle-expand {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(0.6); }
+    100% { transform: rotate(360deg) scale(1); } 
+}
+.cjui-loading-theme--ring-circle_0 {
+    &:before, &:after {
+        content: '';
+        box-sizing: border-box;
+        animation-fill-mode: both;
+        position: absolute;
+        border-radius: 100%;
+    }
+    &:before {
+        background: var(--cjuiLoadingColor);
+        height: 32%;
+        width: 32%;
+        top: 34%;
+        left: 34%;
+        animation: cjui-ring-circle-reduce 1s 0s cubic-bezier(.09, .57, .49, .9) infinite; 
+    }
+    &:after {
+        width: 60%;
+        height: 60%;
+        top: 20%;
+        left: 20%;
+        background: transparent;
+        border: 2px solid;
+        border-color: var(--cjuiLoadingColor) transparent;
+        animation: cjui-ring-circle-expand 1s 0s cubic-bezier(.09, .57, .49, .9) infinite;
+        animation-duration: 1s; 
+    }
+}
+
+// 双正方形离心运动
+@keyframes cube-transition {
+    25% { transform: translateX(50px) scale(0.5) rotate(-90deg); }
+    50% { transform: translate(50px, 50px) rotate(-180deg); }
+    75% { transform: translateY(50px) scale(0.5) rotate(-270deg); }
+    100% { transform: rotate(-360deg); } 
+}
+.cjui-loading-theme--square-centrifugal_0 {
+    &:before, &:after {
+        content: '';
+        box-sizing: border-box;
+        animation-fill-mode: both;
+        width: 20%;
+        height: 20%;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        background-color: var(--cjuiLoadingColor);
+        animation: cube-transition 1.6s 0s infinite ease-in-out; 
+    }
+    &:after {
+        animation-delay: -0.8s; 
+    }
+}
+
+// 水波
+@keyframes cjui-three-wave {  // 从点放大 + 消失
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; } 
+}
+.cjui-loading-theme--three-wave_3 {
+    & > span:nth-child(2) {
+        animation-delay: 0.2s; 
+    }
+    & > span:nth-child(3) {
+        animation-delay: 0.4s; 
+    }
+    & > span {
+        background-color: var(--cjuiLoadingColor);
+        border-radius: 100%;
+        margin: 2px;
+        animation-fill-mode: both;
+        position: absolute;
+        left:0;
+        top:0;
+        opacity: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        animation: cjui-three-wave 1s 0s linear infinite; 
+    }
+}
+
+// 波纹扩散
+@keyframes cjui-expand-border-disappear {
+    0% { transform: scale(0.1); opacity: 1; }
+    70% { transform: scale(1); opacity: 0.7; }
+    100% { opacity: 0; } 
+}
+.cjui-loading-theme--three-ring-wave_3 {
+    & > span:nth-child(0) {
+        animation-delay: -0.2s; 
+    }
+    & > span:nth-child(1) {
+        animation-delay: 0s; 
+    }
+    & > span:nth-child(2) {
+        animation-delay: 0.2s; 
+    }
+    & > span:nth-child(3) {
+        animation-delay: 0.4s; 
+    }
+    & > span {
+        animation-fill-mode: both;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        border: 2px solid var(--cjuiLoadingColor);
+        transform: scale(0);
+        animation: cjui-expand-border-disappear 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8); 
+    }
+}
+
+// 横列三点跳动
+@keyframes cjui-three-ball-beat {
+    50% { opacity: 0.2; transform: scale(0.75); }
+    100% { opacity: 1; transform: scale(1); } 
+}
+.cjui-loading-theme--three-ball-beat_3 {
+    & {
+        --cjuiLoadingWidth: 50px;
+        --cjuiLoadingHeight: 15px;
+    }
+    & {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    & > span {
+        background-color: var(--cjuiLoadingColor);
+        width: 30%;
+        height: 100%;
+        border-radius: 100%;
+        animation-fill-mode: both;
+        display: inline-block;
+        animation: cjui-three-ball-beat 0.7s 0s infinite linear; 
+    }
+    & > span:nth-child(2n-1) {
+        animation-delay: 0.35s !important; 
+    }
+}
+
+// 横列4点跳动
+@keyframes cjui-bigreduce-fade {
+    0% { transform: scale(1); opacity: 1; }
+    45% { transform: scale(0.1); opacity: 0.7; }
+    80% { transform: scale(1); opacity: 1; } 
+}
+.cjui-loading-theme--four-ball-beat_4 {
+    & {
+        --cjuiLoadingWidth: 50px;
+        --cjuiLoadingHeight: 10px;
+    }
+    & {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    & > span {
+        background-color: var(--cjuiLoadingColor);
+        width: 20%;
+        height: 100%;
+        border-radius: 100%;
+        margin: 0 2px;
+        animation-fill-mode: both;
+        display: inline-block;
+        animation-name: cjui-bigreduce-fade;
+        animation-duration: 0.75s;
+        animation-timing-function: cubic-bezier(.2, .68, .18, 1.08);
+        animation-iteration-count: infinite; 
+    }
+    & > span:nth-child(1) {
+        animation-delay: 0s;
+    }
+    & > span:nth-child(2) {
+        animation-delay: 0.12s;
+    }
+    & > span:nth-child(3) {
+        animation-delay: 0.24s;
+    }
+    & > span:nth-child(4) {
+        animation-delay: 0.36s;
+    }
+}
+
+// 竖线波动
+@keyframes cjui-reduce-y {
+    0% { transform: scaley(1); }
+    50% { transform: scaley(0.4); }
+    100% { transform: scaley(1); } 
+}
+.cjui-loading-theme--five-line-beat_5 {
+    & {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    & > span {
+        background-color: var(--cjuiLoadingColor);
+        width: 8%;
+        height: 72%;
+        border-radius: 2px;
+        margin: 0 2px;
+        display: inline-block; 
+        animation-name: cjui-reduce-y;
+        animation-duration: 0.75s;
+        animation-timing-function: cubic-bezier(.2, .68, .18, 1.08);
+        animation-iteration-count: infinite; 
+        animation-fill-mode: both;
+    }
+    & > span:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    & > span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    & > span:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    & > span:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+    & > span:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+}
+
+// 线性钟表
+@keyframes cjui-eight-line-clock {  // 渐隐
+    50% { opacity: 0.3; }
+    100% { opacity: 1; } 
+}
+.cjui-loading-theme--eight-line-clock_8 {
+    & > span {
+        width: 10%;
+        height: 30%;
+        background-color: var(--cjuiLoadingColor);
+        border-radius: 2px;
+        position: absolute;
+        animation-name: cjui-eight-line-clock;
+        animation-duration: 1.2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite; 
+        animation-fill-mode: both;
+    }
+    @for $i from 1 to 9 {
+        & > span:nth-child(#{$i}) {
+            animation-delay: #{0.12*$i}s;
+        }
+    }
+    & > span:nth-child(1) {
+        bottom: 0;
+        left: 45%;
+    }
+    & > span:nth-child(2) {
+        bottom: 11%;
+        left: 70%;
+        transform: rotate(-45deg);
+    }
+    & > span:nth-child(3) {
+        top: 35%;
+        left: 80%;
+        transform: rotate(90deg);
+    }
+    & > span:nth-child(4) {
+        top: 9%;
+        left: 71%;
+        transform: rotate(45deg);
+    }
+    & > span:nth-child(5) {
+        top: 0;
+        left: 45%;
+    }
+    & > span:nth-child(6) {
+        top: 9%;
+        left: 19%;
+        transform: rotate(-45deg);
+    }
+    & > span:nth-child(7) {
+        top: 35%;
+        left: 10%;
+        transform: rotate(90deg);
+    }
+    & > span:nth-child(8) {
+        top: 60%;
+        left: 19%;
+        transform: rotate(45deg);
+    }
+}
+
+// special themes style
+// -------------------------
+// 双正方形旋转
+@keyframes configure-xclockwise {
+    0% { transform: rotate(45deg); }
+    25% { transform: rotate(-45deg); }
+    50% { transform: rotate(-135deg); }
+    75% { transform: rotate(-225deg); }
+    100% { transform: rotate(-315deg); }
+}
+@keyframes configure-clockwise {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}
+.cjui-loading-theme--two-square-rotate_0 {
+    &:before, &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:before {
+        background: #333333;
+        border: 1px solid #12f3d5;
+        transform: rotate(45deg);
+        animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+    }
+    &:after {
+        background: #333333;
+        border: 1px solid var(--cjuiLoadingColor);
+        animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+    }
+}
+
+// 三圆环线旋转
+@keyframes cjui-3-light-rotate {  // 旋转
+    from { transform: rotate(0); }
+    to{ transform: rotate(359deg); }
+}
+.cjui-loading-theme--3-light-rotate_0 {
+    & {
+        --cjuiLoadingWidth: 100px;
+        --cjuiLoadingHeight: 100px;
+        --cjuiLoadingBorder: 2px;
+    }
+    & {
+        position: relative;
+        width: var(--cjuiLoadingWidth);
+        height: var(--cjuiLoadingHeight);
+        border-radius: 50%;
+        border: var(--cjuiLoadingBorder) solid transparent;
+        border-top-color: var(--cjuiLoadingColor);
+        animation: cjui-3-light-rotate 2s linear infinite;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+        border-radius: 50%;
+        border: var(--cjuiLoadingBorder) solid transparent;
+        border-top-color: var(--cjuiLoadingColor);
+        animation: cjui-3-light-rotate 3s linear infinite;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        right: 15%;
+        bottom: 15%;
+        border-radius: 50%;
+        border: var(--cjuiLoadingBorder) solid transparent;
+        border-top-color: var(--cjuiLoadingColor);
+        animation: cjui-3-light-rotate 1.5s linear infinite;
+    }
+}

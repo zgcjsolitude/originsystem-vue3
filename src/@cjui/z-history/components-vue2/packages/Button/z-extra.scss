@@ -1,0 +1,640 @@
+/*****
+  * =========== 按钮样式 ================ 
+  *** 
+  * === 更多文档说明请查看 cjary.cn
+*/
+
+// 悬浮气泡按钮
+// -------------------------
+
+@keyframes bubbles {
+    100% {
+        background-position: 92% -220%, 31% -185%, 24% 6%, 16% -328%, 39% -366%, 110% -375%, 5% -60%, 59% -365%, 41% -363%, 82% -8%, 37% -224%;
+        box-shadow: inset 0 -6.5em 0 #4d90fc;
+    }
+}
+.CJUI-button-null--bubble {
+  & {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    text-align: center;
+    color: white;
+    background-color: #44d444;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+  &:hover, &:focus {
+    animation: bubbles 1s forwards ease-out;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 90% 90% / 0.88em 0.88em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 23% 141% / 0.81em 0.81em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 17% 90% / 0.68em 0.68em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 15% 94% / 1.12em 1.12em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 42% 126% / 0.86em 0.86em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 102% 120% / 0.58em 0.58em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 12% 121% / 0.67em 0.67em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 69% 87% / 1.18em 1.18em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 32% 99% / 0.79em 0.79em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 84% 129% / 0.79em 0.79em, 
+                radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 40% 99% / 0.72em 0.72em;
+    background-color: #44d444;
+    background-repeat: no-repeat;
+  }
+  &:active {
+    background: darken(#4d90fc, 50%);;
+  }
+}
+
+// 流感线
+// -------------------------
+
+.CJcss-btn-code--actionline {
+    & {
+        position: relative;
+        width: 150px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 3px;
+    }
+    .svgclass {
+      position: absolute;
+      top: 0;
+    }
+    #shape {
+      stroke-width: 6px;
+      fill: transparent;
+      stroke: $brand-primary;
+      stroke-dasharray: 85 400;
+      stroke-dashoffset: -220;
+      transition: 1s all ease;
+    }
+    &:hover #shape {
+      stroke-dasharray: 50 0;
+      stroke-width: 3px;
+      stroke-dashoffset: 0;
+      stroke: $CJcssBlueGreen;
+    }
+}
+
+// 帘下效果
+// -------------------------
+
+.CJcss-btn-code--slide-in {  
+    $Width: 220px;
+    $Height: 32px;
+  
+    & {
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    & > div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    & > div:nth-child(1) {
+      color: #000000;
+      background-color: #ffffff;
+      border: #000000 solid 1px;
+    }
+    & > div:nth-child(2) {
+      background-color: #000000;
+      transition: top 0.1s ease;
+      top: -$Height;
+    }
+    & > div:nth-child(3) {
+      color: #ffffff;
+      transition: opacity 0.1s ease;
+      opacity: 0;
+    }
+    &:hover > div:nth-child(2) {
+      top: 0px;
+      transition: top 0.1s ease;
+    }
+    &:hover > div:nth-child(3) {
+      opacity: 1;
+      transition: opacity 0.1s ease;
+    }
+}
+
+// 横帘效果
+// -------------------------
+
+.CJcss-btn-code--skewed-slide { 
+    $Width: 240px;
+    $Height: 32px;
+  
+    & {
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      overflow: hidden;
+      overflow: hidden;
+    }
+    & div {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    
+    & div:nth-child(1) {
+        color: #000000;
+        background-color: #ffffff;
+        border: #000000 solid 1px;
+    }
+    
+    & div:nth-child(2) {
+        background-color: #000000;
+        width: $Width+60;
+        transition: all 0.2s ease;
+        transform: translate(-320px, 0px) skewX(-30deg);
+    }
+    
+    & div:nth-child(3) {
+        color: #ffffff;
+        left: -$Width;
+        transition: left 0.2s ease;
+    }
+    
+    &:hover div:nth-child(2) {
+        transition: all 0.5s ease;
+        transform: translate(-15px, 0px) skewX(-30deg);
+    }
+    
+    &:hover div:nth-child(3) {
+        left: 0px;
+        transition: left 0.3s ease;
+    }
+  
+}
+
+// 3D翻折
+// -------------------------
+
+.CJcss-btn-code--3d-tick {  
+    $Width: 220px;
+    $Height: 32px;
+    
+    & {
+      margin: 0;
+      border: 0;
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      perspective: 500px;
+      perspective-origin: center top;
+    }
+  
+    & > div {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: #000000 solid 1px;
+    }
+  
+    & div:nth-child(1) {
+      color: #000000;
+      background-color: #ffffff;
+      transition: all 0.2s ease;
+    }
+  
+    & div:nth-child(2) {
+      color: #ffffff;
+      background-color: #000000;
+      transform: rotateX(90deg);
+      transition: all 0.2s ease;
+      transform-origin: left top;
+    }
+  
+    &:hover div:nth-child(1) {
+      transition: all 0.2s ease;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  
+    &:hover div:nth-child(2) {
+      transition: all 0.2s ease;
+      transform: rotateX(0deg);
+    }
+  
+  
+}
+
+// 3D滚动
+// -------------------------
+
+.CJcss-btn-two-_word_--3d-roll {  
+    $Width: 240px;
+    $Height: 32px;
+    
+    & {
+      margin: 0;
+      border: 0;
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      perspective: 500px;
+    }
+  
+    & div {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        border: #000000 solid 1px;
+        pointer-events: none;
+        box-sizing: border-box;
+    }
+    
+    & div:nth-child(1) {
+        color: #000000;
+        background-color: #000000;
+        transform: rotateX(90deg);
+        transition: all 0.2s ease;
+        transform-origin: 50% 50% -16px;
+    }
+    
+    & div:nth-child(2) {
+        color: #000000;
+        background-color: #ffffff;
+        transform: rotateX(0deg);
+        transition: all 0.2s ease;
+        transform-origin: 50% 50% -16px;
+    }
+    
+    &:hover div:nth-child(1) {
+        color: #ffffff;
+        transition: all 0.2s ease;
+        transform: rotateX(0deg);
+    }
+    
+    &:hover div:nth-child(2) {
+        background-color: #000000;
+        transition: all 0.2s ease;
+        transform: rotateX(-90deg);
+    }
+}
+
+// 双3D滚动
+// -------------------------
+
+.CJcss-btn-four-_word_--3d-doubleroll {  
+    $Width: 300px;
+    $Height: 32px;
+    
+    & {
+      margin: 0;
+      border: 0;
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      perspective: 500px;
+      transform-style: preserve-3d;
+    }
+    
+    & > div {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      border: #000000 solid 1px;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+    
+    & > div:nth-child(1) {
+      color: #000000;
+      background-color: #ffffff;
+      z-index: 0;
+      clip: rect(0px, $Width/2, $Height, 0px);
+      position: absolute;
+      transition: all 0.2s ease;
+      transform: rotateX(0deg);
+      transform-origin: 50% 50% -15px;
+    }
+    
+    & > div:nth-child(2) {
+      color: #000000;
+      background-color: #000000;
+      z-index: -1;
+      clip: rect(0px, $Width/2, $Height, 0px);
+      position: absolute;
+      transform: rotateX(90deg);
+      transition: all 0.2s ease;
+      transform-origin: 50% 50% -15px;
+    }
+    
+    & > div:nth-child(3) {
+      color: #000000;
+      background-color: #ffffff;
+      z-index: 0;
+      clip: rect(0px, $Width, $Height, $Width/2);
+      position: absolute;
+      transition: all 0.2s ease 0.1s;
+      transform: rotateX(0deg);
+      transform-origin: 50% 50% -15px;
+    }
+    
+    & > div:nth-child(4) {
+      color: #000000;
+      background-color: #000000;
+      z-index: -1;
+      clip: rect(0px, $Width, $Height, $Width/2);
+      position: absolute;
+      transform: rotateX(-90deg);
+      transition: all 0.2s ease 0.1s;
+      transform-origin: 50% 50% -15px;
+    }
+    
+    &:hover > div:nth-child(1) {
+      background-color: #000000;
+      transition: all 0.2s ease;
+      transform: rotateX(-90deg);
+    }
+    
+    &:hover > div:nth-child(2) {
+      color: #ffffff;
+      transition: all 0.2s ease;
+      transform: rotateX(0deg);
+    }
+    
+    &:hover > div:nth-child(3) {
+      background-color: #000000;
+      transition: all 0.2s ease 0.1s;
+      transform: rotateX(90deg);
+    }
+    
+    &:hover > div:nth-child(4) {
+      color: #ffffff;
+      transition: all 0.2s ease 0.1s;
+      transform: rotateX(0deg);
+    }
+  
+    
+  
+}
+
+// 360度翻折
+// -------------------------
+
+@keyframes b09_electric_blinkIn {
+  from, to { background-color: #f8f8f8; color: #080808; }
+  50% { background-color: #ffffff; color: #000000; }
+}
+.CJcss-btn-two-_word_--3d-pushback {  
+    $Width: 300px;
+    $Height: 32px;
+    
+    & {
+      margin: 0;
+      border: 0;
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      perspective: 500px;
+      transform-style: preserve-3d;
+    }
+    & div {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        pointer-events: none;
+        border: #000000 solid 1px;
+    }
+    
+    & div:nth-child(1) {
+        color: #000000;
+        background-color: #ffffff;
+        transform: rotateX(0deg) translateZ(0px);
+        transform-origin: 50% 50%;
+        transition: all 0.2s ease;
+    }
+    
+    & div:nth-child(2) {
+        color: #ffffff;
+        background-color: #000000;
+        transform: rotateX(-179.5deg) translateZ(1px);
+        transform-origin: 50% 50%;
+        transition: all 0.2s ease;
+    }
+    
+    &:hover div:nth-child(1) {
+        transition: all 0.2s ease;
+        transform: rotateX(179.5deg);
+    }
+    
+    &:hover div:nth-child(2) {
+        transition: all 0.2s ease;
+        transform: rotateX(0deg) rotateY(0deg) translateZ(1px);
+    }
+}
+
+// 故障大
+// -------------------------
+
+@keyframes b10_tveffect_blue {
+  from, to { opacity: 0; }
+  25% { opacity: 1; transform: scale(1.2, 1.4) translate(-10px, -3px) skewX(-25deg); }
+  50% { opacity: 1; transform: scale(1.9, 1.1) translate(16px, 3px) skewX(5deg); }
+  75% { opacity: 1; transform: scale(1.3, 2) translate(-30px, -3px) skewX(20deg); }
+}
+@keyframes b10_tveffect_red {
+  from, to { opacity: 0; }
+  25% { opacity: 1; transform: scale(1.8, 1.6) translate(-10px, 3px) skewX(30deg); }
+  50% { opacity: 1; transform: scale(1.5, 1.2) translate(20px, 6px) skewX(5deg); }
+  75% { opacity: 1; transform: scale(0.9, 1.8) translate(-16px, -1px) skewX(-20deg); }
+}
+@keyframes b10_tveffect_green {
+  from, to { opacity: 0; }
+  25% { opacity: 1; transform: scale(1.3, 1.5) translate(3px, 6px) skewX(25deg); }
+  50% { opacity: 1; transform: scale(1.6, 1.1) translate(-16px, -5px) skewX(-15deg); }
+  75% { opacity: 1; transform: scale(1, 1.8) translate(18px, 4px) skewX(15deg); }
+}
+.CJcss-btn-code--tveffect {  
+    $Width: 220px;
+    $Height: 32px;
+    
+    & {
+      margin: 0;
+      border: 0;
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      overflow: hidden;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      perspective: 500px;
+      transform-style: preserve-3d;
+    }
+  
+    & div {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    
+    & div:nth-child(1) {
+        color: #000000;
+        background-color: #ffffff;
+        transition: all 0.1s ease;
+        border: #000000 solid 1px;
+    }
+    
+    & div:nth-child(2) {
+        overflow: hidden;
+    }
+    
+    & div:nth-child(2) div {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: #000000 hidden 1px;
+    }
+    
+    & div:nth-child(2) div:nth-child(1) {
+        color: rgba(200, 120, 120, 0.8);
+        opacity: 0;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAF0lEQVQIW2NkwAIYgWKS6OIgQQxAoUoAE4AAUnD/0ugAAAAASUVORK5CYII=) repeat;
+    }
+    
+    & div:nth-child(2) div:nth-child(2) {
+        color: rgba(120, 200, 120, 0.8);
+        opacity: 0;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAF0lEQVQIW2NkwAIYgWKS6OIgQQxAoUoAE4AAUnD/0ugAAAAASUVORK5CYII=) repeat;
+    }
+    
+    & div:nth-child(2) div:nth-child(3) {
+        color: rgba(120, 120, 200, 0.8);
+        opacity: 0;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAF0lEQVQIW2NkwAIYgWKS6OIgQQxAoUoAE4AAUnD/0ugAAAAASUVORK5CYII=) repeat;
+    }
+    
+    &:hover div:nth-child(1) {
+        color: #ffffff;
+        background-color: #000000;
+        transition: color 0s ease;
+        transition: background-color 0.3s ease 0.2s;
+    }
+    
+    &:hover div:nth-child(2) div:nth-child(1) {
+        animation: b10_tveffect_red 0.25s linear;
+    }
+    
+    &:hover div:nth-child(2) div:nth-child(2) {
+        animation: b10_tveffect_green 0.25s linear;
+    }
+    
+    &:hover div:nth-child(2) div:nth-child(3) {
+        animation: b10_tveffect_blue 0.25s linear;
+    }
+}
+
+//  故障小
+// -------------------------
+@keyframes b12_3d_glitch_bg {
+  49.00% { background-color: #ffffff; }
+  50.00% { background-color: #000000; }
+  to { background-color: #000000; }
+}
+@keyframes b12_3d_glitch {
+  from { transform: skewX(0deg); color: #000000; }
+  25.00% { transform: skewX(80deg); color: #000000; }
+  75.00% { transform: skewX(-20deg); color: #ffffff; }
+  90.00% { transform: skewX(0deg); color: #ffffff; }
+  to { transform: skewX(0deg); color: #ffffff; }
+}
+.CJcss-btn-code--3d-glitch {  
+    $Width: 220px;
+    $Height: 32px;
+    
+    & {
+      margin: 0;
+      border: 0;
+      font-size: 14px;
+      position: relative;
+      width: $Width;
+      height: $Height;
+      line-height: $Height;
+      text-align: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    
+    & div {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    
+    & div:nth-child(1) {
+        background-color: #ffffff;
+        border: #000000 solid 1px;
+    }
+    
+    & div:nth-child(2) {
+        color: #000000;
+        left: -50%;
+        top: 2px;
+        width: 200%;
+        height: 100%;
+    }
+    
+    &:hover div:nth-child(1) {
+        animation: b12_3d_glitch_bg 0.3s linear;
+        animation-fill-mode: forwards;
+    }
+    
+    &:hover div:nth-child(2) {
+        color: #000000;
+        animation: b12_3d_glitch 0.3s linear;
+        animation-fill-mode: forwards;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAF0lEQVQIW2NkwAIYgWKS6OIgQQxAoUoAE4AAUnD/0ugAAAAASUVORK5CYII=) repeat;
+    }
+}

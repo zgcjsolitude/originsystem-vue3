@@ -1,0 +1,81 @@
+@import './_common.scss';
+@import './_mixins.scss';
+
+// default style
+// -------------------------
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+ul {
+    list-style-type: none;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    position: relative;
+}
+#app {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	position: relative;
+}
+
+/* PC端 */
+@media screen and (min-width: 769px) {
+
+    // 系统默认样式设置
+    // -------------------------
+
+    /* 滚动条样式 */
+    body ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 5px;
+        height: 5px;
+    }
+    body ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    body ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* 页面元素 */
+#live2dcanvas {  // 看板娘样式
+    opacity: 0.5;
+}
+
+/* element-ui */ 
+.el-dialog__wrapper {  // 模态框居中
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  
+    &.not-center {
+        display: unset;
+    }
+  
+    .el-dialog {
+        margin-bottom: 15vh;
+        max-height: 100%;
+        overflow: auto;
+    }
+}
+.scrollbar-wrapper {  // scrollbar组件横向滚动条隐藏
+    overflow-x: hidden !important;
+}
+
+/* custom class */ 
+.h-100 {
+    height: 100%;
+}

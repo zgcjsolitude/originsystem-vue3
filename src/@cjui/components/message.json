@@ -1,0 +1,56 @@
+{
+    "name": "cjui-component",
+    "version": "1.0.0",
+    "dependencies": [],
+    "updateLog": [
+        {
+            "title": "cjui-component@0.5.0",
+            "date": "2021/11/25",
+            "textList": [
+                "1. 新增 公共组件栏 - RandomCode 随机验证码 - RandomCodeBlank纯背景随机验证码 和 RandomCodePattern 花纹背景随机验证码。",
+                "1. 新增 公共组件栏 - LoadingTheme 载入效果 - LoadingTheme 主题组件 - LoadingFont 和 LoadingSolar组件。"
+            ]
+        },
+        {
+            "title": "cjui-component@0.4.0",
+            "date": "2021/11/23",
+            "textList": [
+                "1. 新增 公共组件栏 - FontAnimation 文字动效 - 文字动画组件。",
+                "2. 新增 公共组件栏 - LoadingTheme 载入效果 - LoadingTheme载入主题 和 LoadingProgress进度指示器 组件。",
+                "3. 新增 公共组件栏 - Nav 导航 - MouseBox 鼠标定位菜单 组件。",
+                "4. 新增 公共组件栏 - WaterFall 瀑布流 - Wfrow 和 Wfcol 纵向瀑布流布局 组件。"
+            ]
+        },
+        {
+            "title": "cjui-component@0.3.0",
+            "date": "2021/11/20",
+            "textList": [
+                "1. 新增 WebUI组件栏 - Particles粒子动效子栏目 - 粒子动效蒙版 - 星点蒙版。",
+                "2. 重构 PC组件栏 - Layout 布局子栏目 - 宫格动画导航 - 宫格动画导航 组件，采用slot方式自定义内容。"
+            ]
+        },
+        {
+            "title": "cjui-component@0.2.0",
+            "date": "2021/11/19",
+            "textList": [
+                "1. 新增 PC组件栏 - Layout 布局子栏目 - 页面布局 - 双栏布局盒子组件。"
+            ]
+        },
+        {
+            "title": "cjui-component@0.1.0",
+            "date": "2021/7/17",
+            "textList": [
+                "1. 新增 PC组件栏 - Pages 页面子栏目 - 登录页 - 方块渐变。"
+            ]
+        },
+        {
+            "title": "cjui-component@0.0.0",
+            "date": "2021/7/10",
+            "textList": [
+                "1. 正式发布了CJUI组件板块，本次版本包含内容见下述。",
+                "2. PC组件栏 - Layout 布局子栏目 - 宫格动画导航 - 宫格动画导航。",
+                "3. PC组件栏 - Layout 布局子栏目 - 详情页布局 - header+body+footer详情页布局。"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+/*****
+  * =========== cjui-css 样式设置 ================ 
+  *** 
+  * === 更多文档说明请查看 cjary.cn
+*/
+
+
+// 文本样式
+// -------------------------
+@mixin TextStyle {
+    text-decoration: none; // 文本的装饰，如下划线
+    text-transform: uppercase; // 文本大写|小写|首字母大写 uppercase|lowercase|capitalize
+    text-indent: 2em; // 首行缩进
+    word-spacing: 1em; // 单词间的字间距
+    letter-spacing: 1em; // 字符间的间距
+    text-shadow: h-shadow v-shadow blur color;
+    text-overflow: clip; // 当文本溢出包含元素时发生的事情，修剪文本|省略符号代替|使用给定的字符串代替 clip|ellipsis|string
+    word-break: normal; // 自动换行的处理方法，浏览器默认|允许在单词内换行|只能在半角空格或连字符处换行 normal|break-all|keep-all
+    word-wrap: normal; // 允许长单词或 URL 地址换行到下一行，只在允许的断字点换行|可在长单词或 URL 地址内部换行 normal|break-word
+}
+
+
+// 列表样式
+// -------------------------
+@mixin ListStyle {
+    list-style-type: none; // 标记样式 none|disc|circle...
+    list-style: type position image; // 简写
+}
+
+
+// 背景样式
+// -------------------------
+@mixin BackgroundStyle {
+    background: color image repeat attachment position; // 背景，attachment 设置图片是否滚动
+    box-shadow: h-shadow v-shadow blur spread color inset; // X轴偏移量 Y轴偏移量 模糊半径 扩展半径 阴影颜色 投影方式(内阴影inset、默认外阴影outset)
+    border-image: source slice width outset repeat; // 图片路径 内偏移 宽度 超出边框的量 平铺方式(repeated平铺|rounded铺满|stretched拉伸)
+    background-size: cover; // length|percentage|cover|contain 高度和宽度|百分比宽度和高度|图像完全覆盖背景区域|图像扩展至最大尺寸以完全适应内容区域
+    background-origin: border-box; // content-box|padding-box|border-box  将背景只含内容区|包含padding区|包含border区
+    background-clip: border-box; // border-box|padding-box|content-box 规定背景的绘制区域，被裁剪到边框盒|被裁剪到内边距框|被裁剪到内容框
+}
+
+
+// 边框样式
+// -------------------------
+@mixin BorderStyle {
+    box-sizing: content-box; // 内容区不包含内边距和边框|内容区包含内边距和边框|继承父元素 box-sizing 属性的值 content-box|border-box|inherit
+    outline-offset: length; // 轮廓偏移 length|inherit
+    resize: none; // 无法调整|可调宽高|可调宽|可调高 none|both|horizontal|vertical
+}

@@ -1,0 +1,42 @@
+/*****
+  * =========== cjui-css 常用公共样式 ================ 
+  *** 
+  * === 更多文档说明请查看 cjary.cn
+*/
+
+
+
+// 文本样式
+
+@mixin CJUImoreColumnHidden($column) {  // 多行超出隐藏，传入行数
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $column;
+    overflow: hidden;
+}
+
+// 滚动条样式
+
+@mixin CJUIscrollbarStyle($width, $height, $thumbColor, $trackColor) {  // 滚动条样式，显示滚动条，传入滚动条宽高、滑块颜色、背景颜色
+    &:hover::-webkit-scrollbar {
+        display: block;
+        -webkit-appearance: none;
+        width: $width;
+        height: $height;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+        background: $thumbColor;
+    }
+    &:hover::-webkit-scrollbar-track {
+        background: $trackColor;
+    }
+}
+
+@mixin CJUIscrollbarHoverShow($width, $height, $thumbColor, $trackColor) {  // 隐藏滚动条，hover显示滚动条
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    @include CJUIscrollbarStyle($width, $height, $thumbColor, $trackColor);
+}

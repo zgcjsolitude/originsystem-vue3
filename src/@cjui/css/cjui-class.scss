@@ -1,0 +1,52 @@
+/*****
+  * =========== cjui-css 常用公共样式 ================ 
+  *** 
+  * === 更多文档说明请查看 cjary.cn
+*/
+
+// 布局样式
+
+.cjui-f-center {  // flex垂直水平居中，设在父元素
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cjui-ab-center {  // translate垂直水平居中，设在子元素
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// 文本样式
+
+.cjui-t-justify {  // 文字两端对齐
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.cjui-t-br:after {  // 当前元素后加换行效果
+    content: "\A";
+    white-space: pre;
+}
+
+.cjui-t-hidden {  // 单行隐藏
+    overflow: hidden; /*超出隐藏*/
+    white-space: nowrap; /*不允许换行*/
+    text-overflow: ellipsis; /*文本超出三点代替*/
+}
+
+// img标签样式
+
+.cjui-img-cover {  //  类似于css3中背景图片的background-size: cover;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+
+// 滚动条样式
+
+.cjui-scrollbar-hidden::-webkit-scrollbar {  // 隐藏滚动条
+    display: none;
+}

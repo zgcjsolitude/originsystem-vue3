@@ -1,0 +1,22 @@
+// 模态框居中
+.el-dialog__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &.not-center {
+        display: unset;
+    }
+
+    .el-dialog {
+        margin-bottom: 15vh;
+        max-height: 100%;
+        overflow: auto;
+    }
+}
+
+// scrollbar组件横向滚动条隐藏
+.scrollbar-wrapper {
+    overflow-x: hidden !important;
+}

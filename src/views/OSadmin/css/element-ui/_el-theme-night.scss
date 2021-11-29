@@ -1,0 +1,234 @@
+/*****
+  * =========== element-plus 夜间模式色彩 ================ 
+  *** 
+  * === 
+*/
+
+@import '../variable';
+@import '../../../../@cjui/css/theme-node/button/_mixins-dazzleLight.scss';
+
+// button
+:deep(.el-button) {
+    @include DazzleLightBasic;
+}
+:deep(.el-button--primary) {
+    @include DazzleLightColor($brand-primary);
+}
+:deep(.el-button--success) {
+    @include DazzleLightColor($brand-success);
+}
+:deep(.el-button--warning) {
+    @include DazzleLightColor($brand-warning);
+}
+:deep(.el-button--danger) {
+    @include DazzleLightColor($brand-danger);
+}
+:deep(.el-button--info) {
+    @include DazzleLightColor($brand-info);
+}
+
+// input
+:deep(.el-input__inner),
+:deep(.el-textarea__inner) {
+	background: #464a56;
+	border-color: darken($color: $brand-primary, $amount: 10%);
+	color: #c3c3c3;
+}
+:deep(.el-input__inner:focus),
+:deep(.el-input__inner:hover),
+:deep(.el-textarea__inner:hover),
+:deep(.el-textarea__inner:focus) {
+	color: #14a7b6;
+  	border-color: $brand-primary;
+}
+
+// checked
+:deep(.el-checkbox__inner) {
+  border-color: darken($color: $brand-primary, $amount: 10%);
+  background-color: transparent;
+}
+:deep(.el-checkbox__label) {
+  color: darken($color: $brand-primary, $amount: 10%);
+}
+:deep(.el-checkbox__input.is-checked .el-checkbox__inner),
+:deep(.el-checkbox__input.is-indeterminate .el-checkbox__inner) {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+}
+:deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
+  color: lighten($color: $brand-primary, $amount: 10%);
+}
+
+// radio
+.el-radio__inner:hover {
+  	border-color: $brand-primary;
+}
+.el-radio__input.is-checked + .el-radio__label {
+	color: $brand-primary;
+}
+.el-radio__input.is-checked .el-radio__inner {
+  	border-color: $brand-primary;
+  	background: $brand-primary;
+}
+
+// tree
+:deep(.el-tree) {
+  	background: transparent;
+}
+:deep(.el-tree-node__content) {
+  	color: $brand-primary;
+}
+:deep(.el-checkbox .el-checkbox__input.is-checked .el-checkbox__inner),
+:deep(.el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner) {
+ 	background-color: $brand-primary;
+ 	border-color: $brand-primary;
+}
+
+// tabs
+:deep(.el-tabs--border-card) {
+    background: #464a56;
+    border-color: $brand-primary;
+
+    & > .el-tabs__header {
+        background-color: #464a56;
+        border-bottom-color: darken($color: $brand-primary, $amount: 10%);
+    }
+    & > .el-tabs__header .el-tabs__item {
+        color: darken($color: $brand-primary, $amount: 10%);
+    }
+    & > .el-tabs__header .el-tabs__item.is-active {
+        color: $brand-primary;
+        border-right-color: darken($color: $brand-primary, $amount: 10%);
+        border-left-color: darken($color: $brand-primary, $amount: 10%);
+        background-color: #464a56;
+    }
+    & > .el-tabs__header .el-tabs__item:not(.is-disabled):hover {
+        color: $brand-primary;
+    }
+}
+
+// dialog
+:deep(.el-dialog) {
+    background: transparent;
+    border: 1px solid darken($color: $brand-primary, $amount: 30%);
+    box-shadow: 0 0 4px 2px rgba(150,150,150,0.1);
+
+    .el-dialog__header {
+      background: linear-gradient(33deg, #024770, #007276, #000c2a);
+    }
+    .el-dialog__title,
+    .el-dialog__headerbtn .el-dialog__close {
+        color: $brand-primary;
+    }
+    .el-dialog__body {
+        color: darken($color: $brand-primary, $amount: 10%);
+        background: #243646;
+        border-top: 1px solid darken($color: $brand-primary, $amount: 20%);
+        border-bottom: 1px solid darken($color: $brand-primary, $amount: 30%);
+    }
+    .el-dialog__footer {
+        color: $brand-primary;
+        background: #00263e;
+    }
+}
+
+// drawer
+:deep(.el-drawer) {
+    background: #243646;
+    border-left: 1px solid darken($color: $brand-primary, $amount: 30%);
+
+    .el-drawer__header {
+        background: linear-gradient(33deg, #024770, #007276, #000c2a);
+        border-bottom: 1px solid #029ea5;
+    }
+    .el-drawer__header,
+    .el-drawer__close-btn {
+        color: lighten($color: $brand-primary, $amount: 30%);
+    }
+}
+
+// table
+:deep(.el-table) {
+    $blackBgColor: #464a56;
+
+    background: $blackBgColor;
+    border-color: darken($color: $brand-primary, $amount: 10%);
+
+    &::before,
+    &::after {
+        background-color: darken($color: $brand-primary, $amount: 10%);
+    }
+
+    tr, th {
+        background: $blackBgColor;
+    }
+    th {
+        color: $brand-primary;
+    }
+    tr {
+        color: lighten($color: $brand-primary, $amount: 10%);
+    }
+    td,
+    th.is-leaf {
+        border-bottom-color: darken($color: $brand-primary, $amount: 10%);
+        border-right-color: darken($color: $brand-primary, $amount: 10%);
+    }
+    .el-table__header tr,
+    .el-table__header th {
+        background-color: darken($color: $blackBgColor, $amount: 5%);
+    }
+    .el-table__body tr:hover > td {
+        background-color: darken($color: $blackBgColor, $amount: 10%);
+    }
+    // 有 expand 样式调整
+    .el-table__expand-icon {
+        color: $brand-primary;
+    }
+    .el-table__expanded-cell {
+        background: $blackBgColor;
+    }
+    // 有 fixed 样式调整
+    .el-table__fixed-right::before, .el-table__fixed::before {
+        background-color: unset;
+    }
+    .el-table__body tr.hover-row > td.el-table__cell {
+        background-color: darken($color: $blackBgColor, $amount: 10%);
+    }
+}
+
+// loading mask
+:deep(.el-loading-mask) {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .el-loading-spinner i {
+        color: $brand-primary;
+    }
+    .el-loading-spinner .el-loading-text {
+        color: $brand-primary;
+    }
+}
+
+// pagination
+:deep(.el-pagination) {
+    $blackBgColor: #464a56;
+
+    background: $blackBgColor;
+
+    .el-pagination__total,
+    .el-pagination__jump {
+      color: $brand-primary;
+    }
+    .btn-next,
+    .btn-prev,
+    .el-pager li {
+        background: transparent;
+    }
+    .el-pager li:not(.disabled).active {
+        background-color: transparent;
+        color: $brand-primary;
+    }
+    .btn-next .el-icon,
+    .btn-prev .el-icon {
+      color: $brand-primary;
+    }
+}

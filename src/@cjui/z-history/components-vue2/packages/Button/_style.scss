@@ -1,0 +1,204 @@
+/*****
+  * =========== CJui-vue 基于CSS3编写的scss样式 ================ 
+  ***
+  * === button样式
+  * === 更多文档说明请查看 cjary.cn
+*/
+
+// default style
+// -------------------------
+
+.cjui-button {
+    & {
+        color: #606266;
+        border: 1px solid #dcdfe6;
+        background: #fff;
+        display: inline-block;
+        border-radius: 3px;
+        padding: 0.8em 1.6em;
+        line-height: 1;
+        text-align: center;
+        outline: none;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+    &:hover, &:focus {
+        border-color: $brand-primary;
+        color: $brand-primary;
+        background: aliceblue;
+    }
+    &:active {
+        box-shadow: 0 0 2px 2px rgba($brand-primary, 0.5);
+    }
+}
+.cjui-button > div {
+    box-sizing: border-box;
+} 
+.cjui-button + .cjui-button {
+    margin-left: 1em;
+}
+
+// size style
+// -------------------------
+
+.cjui-button--large {
+    padding: 1em 2em;
+}
+.cjui-button--medium {
+    padding: 0.6em 1.2em;
+}
+.cjui-button--small {
+    padding: 0.5em 1em;
+}
+.cjui-button--mini { 
+    padding: 0.4em 0.8em;
+}
+
+// type style
+// -------------------------
+
+.cjui-button--primary {
+    @include buttonType($brand-primary);
+}
+.cjui-button--success {
+    @include buttonType($brand-success);
+}
+.cjui-button--info {
+    @include buttonType($brand-info);
+}
+.cjui-button--warning {
+    @include buttonType($brand-warning);
+}
+.cjui-button--danger {
+    @include buttonType($brand-danger);
+}
+
+// plain style
+// -------------------------
+
+.cjui-button--primary.is-plain {
+    @include buttonPlain($brand-primary);
+}
+.cjui-button--success.is-plain {
+    @include buttonPlain($brand-success);
+}
+.cjui-button--info.is-plain {
+    @include buttonPlain($brand-info);
+}
+.cjui-button--warning.is-plain {
+    @include buttonPlain($brand-warning);
+}
+.cjui-button--danger.is-plain {
+    @include buttonPlain($brand-danger);
+}
+
+// ghost style
+// -------------------------
+
+.cjui-button.is-ghost {
+    @include buttonGhost(#f2f2f2);
+}
+.cjui-button--primary.is-ghost {  
+    @include buttonGhost($brand-primary);
+}
+.cjui-button--success.is-ghost {
+    @include buttonGhost($brand-success);
+}
+.cjui-button--info.is-ghost {  
+    @include buttonGhost($brand-info);
+}
+.cjui-button--warning.is-ghost {  
+    @include buttonGhost($brand-warning);
+}
+.cjui-button--danger.is-ghost {  
+    @include buttonGhost($brand-danger);
+}
+
+
+// round|circle|long|dashed style
+// -------------------------
+
+.cjui-button.is-round {
+    border-radius: 10em;
+}
+.cjui-button.is-circle {
+    border-radius: 100%;
+}
+.cjui-button.is-long {
+    width: 100%;
+}
+.cjui-button.is-dashed {
+    border: 1px dashed;
+}
+
+// disable style
+// -------------------------
+
+.cjui-button.is-disabled {
+    position: relative;
+    pointer-events: none;
+}
+.cjui-button.is-disabled > .cjui-model-span {
+    pointer-events: none;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: inherit;
+    background-color: hsla(0,0%,100%,.35);
+}
+
+// loading style
+// -------------------------
+
+.cjui-button > .cjui-loading-icon {
+    margin-right: 0.4em;
+} 
+.cjui-button > .cjui-loading-icon + span {
+    vertical-align: middle;
+} 
+.cjui-button.is-loading {
+    position: relative;
+    pointer-events: none;
+}
+.cjui-button.is-loading > .cjui-model-span {
+    pointer-events: none;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: inherit;
+    background-color: hsla(0,0%,100%,.35);
+}
+
+// loading 图标
+.cjui-loading-icon {
+    width: 1em;
+    height: 1em;
+    min-width: 12px;
+    min-height: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    animation: cjuiLoadingIcon 1s steps(12, end) infinite;
+    background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=") no-repeat;
+    background-size: 100%;
+    &.cjui-loading-icon_transparent{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMjAnIGhlaWdodD0nMTIwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCc+PHBhdGggZmlsbD0nbm9uZScgZD0nTTAgMGgxMDB2MTAwSDB6Jy8+PHJlY3QgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjU2KScgcng9JzUnIHJ5PSc1JyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwIC0zMCknLz48cmVjdCB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjUpJyByeD0nNScgcnk9JzUnIHRyYW5zZm9ybT0ncm90YXRlKDMwIDEwNS45OCA2NSknLz48cmVjdCB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjQzKScgcng9JzUnIHJ5PSc1JyB0cmFuc2Zvcm09J3JvdGF0ZSg2MCA3NS45OCA2NSknLz48cmVjdCB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjM4KScgcng9JzUnIHJ5PSc1JyB0cmFuc2Zvcm09J3JvdGF0ZSg5MCA2NSA2NSknLz48cmVjdCB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjMyKScgcng9JzUnIHJ5PSc1JyB0cmFuc2Zvcm09J3JvdGF0ZSgxMjAgNTguNjYgNjUpJy8+PHJlY3Qgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHg9JzQ2LjUnIHk9JzQwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LC4yOCknIHJ4PSc1JyByeT0nNScgdHJhbnNmb3JtPSdyb3RhdGUoMTUwIDU0LjAyIDY1KScvPjxyZWN0IHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyB4PSc0Ni41JyB5PSc0MCcgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMjUpJyByeD0nNScgcnk9JzUnIHRyYW5zZm9ybT0ncm90YXRlKDE4MCA1MCA2NSknLz48cmVjdCB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjIpJyByeD0nNScgcnk9JzUnIHRyYW5zZm9ybT0ncm90YXRlKC0xNTAgNDUuOTggNjUpJy8+PHJlY3Qgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHg9JzQ2LjUnIHk9JzQwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LC4xNyknIHJ4PSc1JyByeT0nNScgdHJhbnNmb3JtPSdyb3RhdGUoLTEyMCA0MS4zNCA2NSknLz48cmVjdCB3aWR0aD0nNycgaGVpZ2h0PScyMCcgeD0nNDYuNScgeT0nNDAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjE0KScgcng9JzUnIHJ5PSc1JyB0cmFuc2Zvcm09J3JvdGF0ZSgtOTAgMzUgNjUpJy8+PHJlY3Qgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHg9JzQ2LjUnIHk9JzQwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LC4xKScgcng9JzUnIHJ5PSc1JyB0cmFuc2Zvcm09J3JvdGF0ZSgtNjAgMjQuMDIgNjUpJy8+PHJlY3Qgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHg9JzQ2LjUnIHk9JzQwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LC4wMyknIHJ4PSc1JyByeT0nNScgdHJhbnNmb3JtPSdyb3RhdGUoLTMwIC01Ljk4IDY1KScvPjwvc3ZnPgo=");
+    }
+}
+@keyframes cjuiLoadingIcon {
+    0% {
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+  
+    100% {
+      transform: rotate3d(0, 0, 1, 360deg);
+    }
+}

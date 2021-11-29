@@ -1,0 +1,18 @@
+/*****
+  * =========== osa-xxx 夜间模式 ================ 
+  *** 
+  * === 
+*/
+
+@import '../variable';
+
+// 数据看板卡片样式
+:deep(.osa-card-board) {
+    border: 1px solid #0a7668;
+    // background: linear-gradient(45deg, #2b2f3a, #3f465c);
+    background: #0B1535;
+
+    .osa-card-title {
+        color: $brand-primary;
+    }
+}

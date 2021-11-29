@@ -1,0 +1,164 @@
+/*****
+  * =========== element-plus 日间模式色彩 ================ 
+  *** 
+  * === 
+*/
+
+@import '../variable';
+
+// button
+:deep(.el-button--primary) {
+    &, &:focus, &:active {
+        color: #FFF;
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+    }
+    &:hover{
+        background: lighten($color: $brand-primary, $amount: 10%);
+    } 
+}
+
+// input
+:deep(.el-input__inner),
+:deep(.el-textarea__inner) {
+	background: #fff;
+}
+:deep(.el-input__inner:focus),
+:deep(.el-input__inner:hover),
+:deep(.el-textarea__inner:hover),
+:deep(.el-textarea__inner:focus) {
+  	border-color: $brand-primary;
+}
+
+// checked
+:deep(.el-checkbox__inner) {
+  border-color: darken($color: $brand-primary, $amount: 10%);
+  background-color: transparent;
+}
+:deep(.el-checkbox__label) {
+  color: darken($color: $brand-primary, $amount: 10%);
+}
+:deep(.el-checkbox__input.is-checked .el-checkbox__inner),
+:deep(.el-checkbox__input.is-indeterminate .el-checkbox__inner) {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+}
+:deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
+  color: lighten($color: $brand-primary, $amount: 10%);
+}
+
+// radio
+.el-radio__inner:hover {
+  	border-color: $brand-primary;
+}
+.el-radio__input.is-checked + .el-radio__label {
+	color: $brand-primary;
+}
+.el-radio__input.is-checked .el-radio__inner {
+  	border-color: $brand-primary;
+  	background: $brand-primary;
+}
+
+// tree
+:deep(.el-tree) {
+  	background: transparent;
+}
+:deep(.el-tree-node__content) {
+  	color: $brand-primary;
+}
+:deep(.el-checkbox .el-checkbox__input.is-checked .el-checkbox__inner),
+:deep(.el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner) {
+ 	background-color: $brand-primary;
+ 	border-color: $brand-primary;
+}
+
+// tabs
+:deep(.el-tabs--border-card) {
+    border-bottom: 0;
+
+    .el-tabs__item:not(.is-disabled):hover,
+    :deep(& > .el-tabs__header .el-tabs__item.is-active) {
+        color: #303133;
+        font-weight: bold;
+    }
+    .el-tabs__active-bar {
+        background-color: #303133;
+    }
+    & > .el-tabs__header .el-tabs__item {
+        color: #7d7d7d;
+    }
+    & > .el-tabs__header .el-tabs__item:not(.is-disabled):hover,
+    .el-tabs__item.is-active {
+        color: #7d7d7d;
+        font-weight: normal;
+    }
+}
+
+// dialog
+:deep(.el-dialog) {
+    .el-dialog__header {
+        background:  #f5f7fa;
+        border-bottom: 1px solid #e7e7e7;
+    }
+    .el-dialog__title,
+    .el-dialog__headerbtn .el-dialog__close {
+        color: #7d7d7d;
+    }
+    .el-dialog__footer {
+        border-top: 1px solid #e7e7e7;
+    }
+}
+
+// drawer
+:deep(.el-drawer) {
+    .el-drawer__close-btn .el-drawer__close {
+        color: #eee;
+    }
+}
+
+// table
+:deep(.el-table) {
+    &::before {
+        background-color: #EBEEF5;
+    }
+    &::after {
+        background-color: #EBEEF5;
+    }
+    &.el-table--border {
+        border-left: 1px solid #e7e7e7;
+        border-top: 1px solid #e7e7e7;
+    }
+
+    th {
+        color: #7d7d7d;
+    }
+    td,
+    th.is-leaf {
+        border-bottom-color: #f5f7fa;
+    }
+    .el-table__header tr,
+    .el-table__header th,
+    .el-table__body tr:hover > td {
+        background-color: #f5f7fa;
+    }
+}
+
+// loading mask
+:deep(.el-loading-mask) {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .el-loading-spinner i {
+        color: $brand-primary;
+    }
+    .el-loading-spinner .el-loading-text {
+        color: $brand-primary;
+    }
+}
+
+// pagination
+:deep(.el-pagination) {
+    &.is-background .el-pager li:not(.disabled).active {
+        background-color: $brand-primary;
+        color: #fff;
+    }
+}
