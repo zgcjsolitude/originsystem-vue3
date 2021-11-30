@@ -6,7 +6,7 @@
         <h3 class="wbg-title">Wfrow 纵向瀑布流布局容器</h3>
         <div class="wbg-intro">组件库提供了<code>Wfrow</code><code>Wfcol</code>父子组件，该组件依赖jQuery。</div>
         <div class="wbg-demo is-black is-padding">
-            <cjui-wfrow id="cjuiwfrow" ref="cjuiwfrow"
+            <cjui-wfrow
                 :count="column"
                 :xs="column - 1"
                 :sm="column"
