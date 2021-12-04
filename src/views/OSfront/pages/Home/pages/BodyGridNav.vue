@@ -13,6 +13,13 @@
                 <div style="font-size:22px;">CJUI WEB GUIDE</div>
             </div>
         </template>
+        
+        <template #posX4>
+            <div @click="$router.push('/BookWorld/index')">
+                <div style="font-size:32px;">书籍世界</div>
+                <div style="font-size:22px;">BOOK WORLD</div>
+            </div>
+        </template>
     </GridNav>
 </template>
 

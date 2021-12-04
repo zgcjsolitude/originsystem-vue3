@@ -6,6 +6,7 @@ import OSfrontRouter from './OSfrontRouter'
 import OSadminRouter from './OSadminRouter'
 import BlogSpaceRouter from './BlogSpaceRouter'
 import WebDevelopGuideRouter from './WebDevelopGuide/index'
+import BookWorldRouter from './BookWorld/index';
 
 import Test from '@/views/test.vue'
 
@@ -18,7 +19,8 @@ const router = createRouter({
         ...OSfrontRouter,
         ...OSadminRouter,
         ...BlogSpaceRouter,
-        ...WebDevelopGuideRouter
+        ...WebDevelopGuideRouter,
+        ...BookWorldRouter
     ],
     strict: true,
 })

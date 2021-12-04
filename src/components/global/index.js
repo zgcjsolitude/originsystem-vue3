@@ -4,6 +4,7 @@
 import CjuiWfrow from '@/@cjui/components/packages/Waterfall/Wfrow.vue';
 import CjuiWfcol from '@/@cjui/components/packages/Waterfall/Wfcol.vue';
 import CjuiMouseBox from '@/@cjui/components/packages/MouseBox/index.vue';
+import CjuiFontAnimation from '@/@cjui/components/packages/FontAnimation/index.vue';
 import CjuiElplusTable from '@/@cjui/components/webUI/ElementPlus/packages/table/main.jsx';
 
 // 根源系统前台 全局注册组件
@@ -21,6 +22,7 @@ export const ComponentInstall = function(app) {
     app.component('CjuiWfrow', CjuiWfrow);
     app.component('CjuiWfcol', CjuiWfcol);
     app.component('CjuiMouseBox', CjuiMouseBox);
+    app.component('CjuiFontAnimation', CjuiFontAnimation);
     app.component('CjuiElplusTable', CjuiElplusTable);
 
     // 根源系统前台 全局注册组件

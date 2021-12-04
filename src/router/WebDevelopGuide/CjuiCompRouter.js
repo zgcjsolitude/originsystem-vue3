@@ -115,7 +115,20 @@ export const CjuiCompRouter = [
     },
     {
         title: "PMD 组件",
-        list: [],
+        list: [
+            {
+                title: "Layout 布局",
+                path: 'pmd-structure',
+                fullPath: '/CjuiComponent/pmd-structure',
+                component: () => import('@/views/WebDevelopGuide/pages/CjuiComp/pmdmodel/structure.vue'),
+                show: true,
+                meta: {
+                    title: 'Cjui-Component',
+                    pageCodeMap: [
+                    ]
+                },
+            },
+        ],
     },
     {
         title: "WebUI 组件",
