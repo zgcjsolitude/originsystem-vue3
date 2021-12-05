@@ -39,7 +39,7 @@ export default {
 
         function openWordExtractUrl() {
             const params = {
-				userName: userName.value === '游客'? '': userName.value,
+				userName: '逝心海',
 				sign: '',
 				num: 10
             }

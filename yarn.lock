@@ -255,6 +255,11 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
+"@element-plus/icons@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.npmmirror.com/@element-plus/icons/download/@element-plus/icons-0.0.11.tgz#9b187c002774548b911850d17fa5fc2f9a515f57"
+  integrity sha1-mxh8ACd0VIuRGFDRf6X8L5pRX1c=
+
 "@intlify/core-base@9.1.8":
   version "9.1.8"
   resolved "https://registry.npmmirror.com/@intlify/core-base/download/@intlify/core-base-9.1.8.tgz#7c7f983c5f4e9c0ec88479c0084a267febd0bedf"

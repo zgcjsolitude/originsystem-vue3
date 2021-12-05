@@ -165,6 +165,10 @@ export default {
 		cursor: pointer;
 	  	font-size: fontSizeRem(20);
 	}
+
+	.body {
+		width: 100%;
+	}
 }
 .CjuiPMDlayoutHeader.is-fixed {
 	padding-top: fontSizeRem(44);
