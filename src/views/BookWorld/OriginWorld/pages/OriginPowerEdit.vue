@@ -110,6 +110,9 @@ function clearFormModel() {
 }
 
 function addFormModel() {
+    if (userName !== '逝心海') {
+        return ElMessage.error('暂无操作权限');
+    }
     proxy.$refs.form.validate(async (valid) => {
         if (valid) {
             editBtnLoading.value = true;
@@ -147,6 +150,9 @@ function addFormModel() {
     });
 }
 function modifyFormModel() {
+    if (userName !== '逝心海') {
+        return ElMessage.error('暂无操作权限');
+    }
     proxy.$refs.form.validate(async (valid) => {
         if (valid) {
             editBtnLoading.value = true;
@@ -186,6 +192,9 @@ function modifyFormModel() {
     });
 }
 async function deleteFormModel(row) {
+    if (userName !== '逝心海') {
+        return ElMessage.error('暂无操作权限');
+    }
     if (confirm("此操作不可逆，确认删除？")) {
         const { code, message } = await service.Delete_originpower({
             userName: userName.value,

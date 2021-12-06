@@ -33,7 +33,7 @@ export default {
         const treeShow = ref(false);
         function expandedKeys() {
             originData.value.forEach(el => {
-                if ([1, 2].includes(el.level)) {
+                if ([1].includes(el.level)) {
                     defaultExpandedKeys.value.push(el.id);
                 }
             })
@@ -77,6 +77,19 @@ export default {
 <style lang="scss" scoped>
 .OriginPowerTree-contianer {
     padding: 10px 15px;
+}
+
+:deep(.el-loading-mask) {
+    background: rgba(0,0,0,0.1);
+}
+
+:deep(.el-tree) {
+    background: transparent;
+
+    .el-tree-node__content:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #eee;
+    }
 }
 
 :deep(.text-contaiiner) {

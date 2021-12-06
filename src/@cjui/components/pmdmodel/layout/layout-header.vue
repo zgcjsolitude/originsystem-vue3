@@ -1,7 +1,7 @@
 <template>
 	<div class="CjuiPMDlayoutHeader" 
 		:class="[
-			headerFixed ? 'is-fixed' : '',
+			headerShow ? 'is-show' : '',
 			transition ? 'is-transition' : '',
 		]"
 		@scroll="scrollEvent"
@@ -39,10 +39,6 @@ export default {
 			type: Boolean,
 			default: true
         },
-		headerFixed: {
-			type: Boolean,
-			default: true
-		},
 		title: {
 			type: String,
 			default: 'Header'
@@ -98,27 +94,22 @@ export default {
 
 // color
 .CjuiPMDlayoutHeader {
+	--header-color: #999;
+	--header-background: #111;
+	--header-transition-color: #555;
+	--header-transition-background: #f9f9f9;
+}
+
+.CjuiPMDlayoutHeader {
 	.header {
-		color: #f9f9f9;
-  		background: rgba(0,0,0,0.4);
+		color: var(--header-color);
+  		background: var(--header-background);
 	}
 }
 .CjuiPMDlayoutHeader.is-transition {
 	.header {
-		opacity: 0;
-	}
-}
-.CjuiPMDlayoutHeader.is-fixed {
-	.header {
-		color: #f9f9f9;
-  		background: #000;
-	}
-}
-.CjuiPMDlayoutHeader.is-fixed.is-transition {
-	.header {
-		opacity: 1;
-		color: #333;
-		background:#fff;
+		color: var(--header-transition-color);
+		background:var(--header-transition-background);
 		box-shadow: 0 0 4px 2px rgba(0,0,0,0.1);
 	}
 }
@@ -170,7 +161,7 @@ export default {
 		width: 100%;
 	}
 }
-.CjuiPMDlayoutHeader.is-fixed {
+.CjuiPMDlayoutHeader.is-show {
 	padding-top: fontSizeRem(44);
 }
 </style>  

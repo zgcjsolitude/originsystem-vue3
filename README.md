@@ -1,5 +1,10 @@
 # orign-system-vue3
 
+## 项目规范
+1. 采用4空格缩进
+2. 非全局组件文件命名，业务拆分的子组件采用 PascalCase，可公共使用的组件采用 kebab-case，在模板中书写统一采用 PascalCase
+3. 全局组件文件命名采用 kebab-case，在模板中书写统一采用 kebab-case
+4. 可公共使用的组件统一使用 `<script>`, 业务拆分的子组件使用 `<script>` 或 `<script setup>`(建议用于业务逻辑复杂场景)
 
 ## 需求记录
 1. 锚点定位显示

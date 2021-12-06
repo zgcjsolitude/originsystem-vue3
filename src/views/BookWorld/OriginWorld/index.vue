@@ -39,11 +39,26 @@ export default {
         provide('userPassword', userPassword);
         provide('userAuthority', userAuthority);
         provide('storeProfilesgetter', storeProfilesgetter);
+
+        const title = computed(() => {
+
+        });
+
+        return {
+            title
+        }
     },
 }
 </script>
 
 <style lang="scss" scoped>
+.CjuiPMDlayoutHeader {
+	--header-color: #999;
+	--header-background: linear-gradient(45deg, #121317, #323B42);
+	--header-transition-color: #ccc;
+	--header-transition-background: rgba(255, 255, 255, 0.3);
+}
+
 .OriginWorldIndex {
     height: 100%;
     background: linear-gradient(33deg, #121317, #323b42);
