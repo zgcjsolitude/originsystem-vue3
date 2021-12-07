@@ -29,7 +29,13 @@
     -webkit-background-clip: text;
     color: transparent;
     font-size: 16px;
-    animation: cjuiFontAnimationReveal 3000ms ease-in-out forwards 200ms, cjuiFontAnimationGlow 2500ms linear infinite 2000ms;
+
+    &.is-animated {
+        animation: cjuiFontAnimationReveal 3000ms ease-in-out forwards 200ms, cjuiFontAnimationGlow 2500ms linear infinite 2000ms;
+    }
+    &:not(.is-animated) {
+        background-size: 300% 300%;
+    }
 }
   
 // broken

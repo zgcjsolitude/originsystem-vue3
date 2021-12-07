@@ -8,7 +8,6 @@ import CjuiFontAnimation from '@/@cjui/components/packages/FontAnimation/index.v
 import CjuiElplusTable from '@/@cjui/components/webUI/ElementPlus/packages/table/main.jsx';
 
 // 根源系统前台 全局注册组件
-import OsfFontAnimation from './os-front/FontAnimation.vue';  // 动画文字
 
 // 博客空间 全局注册组件
 import BSLoadingProgress from './blog-space/LoadingProgress.vue';
@@ -26,7 +25,6 @@ export const ComponentInstall = function(app) {
     app.component('CjuiElplusTable', CjuiElplusTable);
 
     // 根源系统前台 全局注册组件
-    app.component('OsfFontAnimation', OsfFontAnimation);
 
     // 博客空间 全局注册组件
     app.component('BsLoadingProgress', BSLoadingProgress);

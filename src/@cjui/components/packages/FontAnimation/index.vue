@@ -5,7 +5,8 @@
             theme ? `cjui-font-animation--${theme}` : '',
             type ? `cjui-font-animation--${type}` : '',
             direction ? `cjui-font-animation--${direction}` : '',
-            disabled && 'is-disabled'
+            disabled && 'is-disabled',
+            animated && 'is-animated'
         ]"
         @click="handleClick"
         >
@@ -40,6 +41,10 @@ export default {
         direction: {
             type: String,
             default: "top",
+        },
+        animated: {
+            type: Boolean,
+            default: true,
         },
     },
     emits: ['click'],

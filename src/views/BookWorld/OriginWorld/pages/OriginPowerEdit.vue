@@ -1,7 +1,7 @@
 <template>
     <el-drawer direction="ltr" size="100%"
         v-model="visible"
-        :title="formModelParams._title || '编辑页面信息'"
+        :title="formModelParams._title || '编辑源权信息'"
         @open="openEvent"
         @close="closeEvent"
     >
@@ -55,7 +55,7 @@
 import { ref, reactive, onMounted, inject, toRefs, getCurrentInstance, watch } from "vue";
 import { ElMessage } from 'element-plus';
 
-import service from '../js/service';
+import service from '../components/OriginPowerTree/js/service';
 
 const props = defineProps({
     visible: {
@@ -77,7 +77,7 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits(['update:visible', 'updateTableData']);
+const emit = defineEmits(['update:visible', 'updateData']);
 
 const { proxy } = getCurrentInstance();
 
@@ -110,7 +110,7 @@ function clearFormModel() {
 }
 
 function addFormModel() {
-    if (userName !== '逝心海') {
+    if (userName.value !== '逝心海') {
         return ElMessage.error('暂无操作权限');
     }
     proxy.$refs.form.validate(async (valid) => {
@@ -150,7 +150,7 @@ function addFormModel() {
     });
 }
 function modifyFormModel() {
-    if (userName !== '逝心海') {
+    if (userName.value !== '逝心海') {
         return ElMessage.error('暂无操作权限');
     }
     proxy.$refs.form.validate(async (valid) => {
@@ -192,7 +192,7 @@ function modifyFormModel() {
     });
 }
 async function deleteFormModel(row) {
-    if (userName !== '逝心海') {
+    if (userName.value !== '逝心海') {
         return ElMessage.error('暂无操作权限');
     }
     if (confirm("此操作不可逆，确认删除？")) {
@@ -211,7 +211,7 @@ async function deleteFormModel(row) {
 }
 
 function openEvent() {
-    isModify.value = true;
+    isModify.value = false;
     if (formModelParams.value._action === 'modify') {
         Object.keys(formModel).forEach(key => {
             if (formModelParams.value[key]) {
@@ -245,7 +245,7 @@ function closeEvent() {
     clearFormModel();
     emit('update:visible', false);
     if (isModify.value) {
-        emit('updateTableData');
+        emit('updateData');
     }
 }
 

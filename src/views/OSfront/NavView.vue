@@ -3,7 +3,7 @@
     	<header>
       		<div class="container-xl header">
         		<nav class="navbar navbar-expand-lg navbar-dark">
-          			<osf-font-animation theme="fade-on" class="cjui-font--style">OriginSystem</osf-font-animation>
+          			<cjui-font-animation theme="fade-on" class="cjui-font--style">OriginSystem</cjui-font-animation>
          			<button type="button" class="navbar-toggler"
          				data-toggle="collapse"
          				data-target="#navbarSupportedContent"

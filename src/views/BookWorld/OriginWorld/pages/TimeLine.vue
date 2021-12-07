@@ -1,8 +1,6 @@
 <template>
-    <div class="OriginPower">
-        <OriginPowerTree 
-            ref="originPowerTree"
-            @upTreeData="upTreeData"
+    <div class="TimeLine">
+        <OriginTimeLine ref="originTimeLine"
             @editNodeClick="openModifyDrawer"
         />
 
@@ -10,22 +8,17 @@
             <span>+</span>
         </div>
         
-        <EditDrawer v-model:visible="editDrawer" :formModelParams="editDrawerParams" :classLevel1="classLevel1" @updateData="updateData" />
+        <EditDrawer v-model:visible="editDrawer" :formModelParams="editDrawerParams" @updateData="updateData" />
     </div>
 </template>
 
 <script setup>
 import { ref, reactive, getCurrentInstance, onMounted } from 'vue';
 
-import OriginPowerTree from '../components/OriginPowerTree/index.vue';
-import EditDrawer from './OriginPowerEdit.vue';
+import OriginTimeLine from '../components/OriginTimeLine/index.vue';
+import EditDrawer from './TimeLineEdit.vue';
 
 const { proxy } = getCurrentInstance();
-
-const classLevel1 = ref([]);
-function upTreeData(treeData) {
-    classLevel1.value = treeData.value;
-}
 
 const editDrawer = ref(false);
 const editDrawerParams = reactive({
@@ -34,25 +27,25 @@ const editDrawerParams = reactive({
 });
 function openAddDrawer() {
     editDrawerParams._action = 'add';
-    editDrawerParams._title = '添加源权信息';
+    editDrawerParams._title = '添加时间线信息';
     editDrawer.value = true;
 }
 function openModifyDrawer(node) {
     editDrawerParams._action = 'modify';
-    editDrawerParams._title = '修改源权信息';
+    editDrawerParams._title = '修改时间线信息';
     Object.keys(node).forEach(key => {
         editDrawerParams[key] = node[key];
     });
     editDrawer.value = true;
 }
 function updateData() {
-    proxy.$refs.originPowerTree.getTreeData();
+    proxy.$refs.originTimeLine.getTimelineList();
 }
 </script>
 
 <style lang="scss" scoped>
-.OriginPower {
-    padding-bottom: 80px;
+.TimeLine {
+    padding: 20px 20px 80px 20px;
 }
 .operate-add {
     color: rgba($color: #000000, $alpha: 0.3);
