@@ -1,11 +1,12 @@
 <template>
-	<PmdmodelHeader class="OriginWorldIndex" title="根源世界" :rightIconShow="false" @leftEvent="$router.go(-1)">
+	<PmdmodelHeader class="OriginWorldIndex" :title="title" :rightIconShow="false" @leftEvent="$router.go(-1)">
         <router-view></router-view>
 	</PmdmodelHeader>
 </template>
 
 <script>
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 import { onMounted, computed, provide } from 'vue';
 
 import PmdmodelHeader from '@/@cjui/components/pmdmodel/layout/layout-header.vue';
@@ -40,8 +41,15 @@ export default {
         provide('userAuthority', userAuthority);
         provide('storeProfilesgetter', storeProfilesgetter);
 
+        const router = useRouter();
         const title = computed(() => {
-
+            if (router.currentRoute.value.path.includes('/OriginPower')) {
+                return '源权体系表'
+            } else if (router.currentRoute.value.path.includes('/TimeLine')) {
+                return '源星世界线'
+            } else {
+                return '根源世界'
+            }
         });
 
         return {
@@ -58,6 +66,11 @@ export default {
 	--header-transition-color: #ccc;
 	--header-transition-background: rgba(255, 255, 255, 0.3);
 }
+
+.OriginWorldIndex {
+    @import './css/element-ui/_el-layout.scss';
+    @import './css/element-ui/_el-theme.scss';
+} 
 
 .OriginWorldIndex {
     height: 100%;

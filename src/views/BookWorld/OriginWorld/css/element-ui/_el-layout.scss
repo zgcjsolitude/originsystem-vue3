@@ -1,0 +1,41 @@
+/*****
+  * =========== element-plus 非色彩系 OriginWorld 注册默认样式 ================ 
+  *** 
+  * === 
+*/
+
+// button 按钮，无圆角
+:deep(.el-button),
+:deep(.el-button--small) {
+    border-radius: 2px;
+}
+
+// input 输入框样式，无圆角
+:deep(.el-input),
+:deep(.el-select),
+:deep(.el-textarea) {
+    .el-input__inner,
+    .el-textarea__inner {
+        border-radius: 0;
+    }
+}
+
+// drawer
+:deep(.el-drawer) {
+    .el-drawer__header {
+        margin-bottom: 0;
+        padding: 15px 20px 12px;
+        font-size: 14px;
+    }
+}
+
+// form
+:deep(.el-form) {
+    .el-form-item {
+        margin-bottom: 5px;
+    }
+
+    .el-select {
+        width: 100%;
+    }
+}

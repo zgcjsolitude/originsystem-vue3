@@ -3,11 +3,11 @@
     <div class="OriginTimeline-contianer" v-loading="timelineLoading">
         <el-timeline>
             <el-timeline-item v-for="(item, i) in timelinelist" :key="i" :timestamp="item.date" placement="top">
-                <el-card>
-                    <p>{{ item.intro }}</p>
+                <div class="timeline-item">
+                    <p class="item-text">{{ item.intro }}</p>
 
-                    <el-icon class="operate-edit" :size="16" @click="editNodeClick(item)"><Edit /></el-icon>
-                </el-card>
+                    <el-icon class="operate-edit" :size="16" @click="editNodeClick(item)"><Edit color="#ababab" /></el-icon>
+                </div>
             </el-timeline-item>
         </el-timeline>
     </div>
@@ -50,10 +50,21 @@ export default {
     padding: 10px 15px;
 }
 
+.timeline-item {
+    border-top: 1px solid #7a7a7a;
+    padding-top: 0.3em;
+    
+    .item-text {
+        color: #ababab;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+}
+
 .operate-edit {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    top: 4px;
+    right: 0px;
 }
 
 :deep(.el-loading-mask) {

@@ -5,25 +5,25 @@
         @open="openEvent"
         @close="closeEvent"
     >
-        <el-form ref="form" :model="formModel" :rules="formModelRule" label-width="100px" label-position="left">
+        <el-form ref="form" :model="formModel" :rules="formModelRule" label-width="80px" label-position="left">
             <el-form-item label="源权名称" prop="name">
                 <el-input size="small" v-model="formModel.name"></el-input>
             </el-form-item>
 
             <el-form-item label="一级父类" prop="lv1Name">
-                <el-select size="small" placeholder="请选择" v-model="formModel.lv1Name" :disabled="formModelParams._action === 'modify'" clearable @change="lv1NameChange">
+                <el-select size="small" popper-class="bw-originworld" placeholder="请选择" v-model="formModel.lv1Name" :disabled="formModelParams._action === 'modify'" clearable @change="lv1NameChange">
                     <el-option v-for="item in classLevel1" :key="item.id" :label="item.name" :value="item.id"></el-option>
                 </el-select>
             </el-form-item>
 
             <el-form-item label="二级父类" prop="lv2Name">
-                <el-select size="small" placeholder="请选择" v-model="formModel.lv2Name" :disabled="formModelParams._action === 'modify'" clearable @change="lv2NameChange">
+                <el-select size="small" popper-class="bw-originworld" placeholder="请选择" v-model="formModel.lv2Name" :disabled="formModelParams._action === 'modify'" clearable @change="lv2NameChange">
                     <el-option v-for="item in classLevel2" :key="item.id" :label="item.name" :value="item.id"></el-option>
                 </el-select>
             </el-form-item>
 
             <el-form-item label="三级父类">
-                <el-select size="small" placeholder="请选择" v-model="formModel.lv3Name" :disabled="formModelParams._action === 'modify'" clearable>
+                <el-select size="small" popper-class="bw-originworld" placeholder="请选择" v-model="formModel.lv3Name" :disabled="formModelParams._action === 'modify'" clearable>
                     <el-option v-for="item in classLevel3" :key="item.id" :label="item.name" :value="item.id"></el-option>
                 </el-select>
             </el-form-item>

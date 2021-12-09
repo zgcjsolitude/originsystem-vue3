@@ -6,15 +6,15 @@
             @open="openEvent"
             @close="closeEvent"
         >
-            <el-form ref="form" :model="formModel" :rules="formModelRule" label-width="80px" label-position="left">
+            <el-form ref="form" :model="formModel" :rules="formModelRule" label-width="70px" label-position="left">
                 <el-form-item label="世界观" prop="world">
-                    <el-select size="small" placeholder="请选择" v-model="formModel.world">
+                    <el-select size="small" placeholder="请选择" popper-class="bw-originworld" v-model="formModel.world">
                         <el-option label="源星" value="源星"></el-option>
                     </el-select>
                 </el-form-item>
 
                 <el-form-item label="纪年" prop="tag">
-                    <el-select size="small" placeholder="请选择" v-model="formModel.tag">
+                    <el-select size="small" placeholder="请选择" popper-class="bw-originworld" v-model="formModel.tag">
                         <el-option label="源历" value="源历"></el-option>
                     </el-select>
                 </el-form-item>
@@ -92,8 +92,8 @@ const formModel = reactive({
     world: '源星',
     tag: '源历',
     year: '',
-    month: '',
-    day: '',
+    month: '01',
+    day: '01',
     intro: '',
     remarks: '',
 });
@@ -106,8 +106,8 @@ function clearFormModel() {
     formModel.world = '源星';
     formModel.tag = '源历';
     formModel.year = '';
-    formModel.month = '';
-    formModel.day = '';
+    formModel.month = '01';
+    formModel.day = '01';
     formModel.intro = '';
     formModel.remarks = '';
 }
