@@ -4,21 +4,21 @@
         
         <h3 class="wbg-title">页面布局</h3>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='TwoColumns'">
+            <el-button class="cjui-dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='TwoColumns'">
                 双栏布局盒子
             </el-button> 
         </div>
         
         <h3 class="wbg-title">宫格动画导航</h3>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='GridNav'">
+            <el-button class="cjui-dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='GridNav'">
                 宫格动画导航
             </el-button> 
         </div>
         
         <h3 class="wbg-title">详情页布局</h3>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='PcmodelPageHeader'">
+            <el-button class="cjui-dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='PcmodelPageHeader'">
                 header + body + footer 详情页布局
             </el-button>
         </div>

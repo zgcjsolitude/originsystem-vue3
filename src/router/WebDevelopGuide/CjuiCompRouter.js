@@ -18,13 +18,13 @@ export const CjuiCompRouter = [
         ],
     },
     {
-        title: "公共组件",
+        title: "样式",
         list: [
             {
-                title: "WaterFall 瀑布流",
-                path: 'packages-waterfall',
-                fullPath: '/CjuiComponent/packages-waterfall',
-                component: () => import('@/views/WebDevelopGuide/pages/CjuiComp/packages/Waterfall.vue'),
+                title: "按钮样式",
+                path: 'buttonStyle',
+                fullPath: '/CjuiComponent/buttonStyle',
+                component: () => import('@/views/WebDevelopGuide/pages/CjuiComp/style/ButtonStyle.vue'),
                 show: true,
                 meta: {
                     title: 'Cjui-Component',
@@ -32,6 +32,11 @@ export const CjuiCompRouter = [
                     ]
                 },
             },
+        ],
+    },
+    {
+        title: "公共组件",
+        list: [
             {
                 title: "Nav 导航",
                 path: 'packages-nav',
@@ -49,6 +54,18 @@ export const CjuiCompRouter = [
                 path: 'packages-loading',
                 fullPath: '/CjuiComponent/packages-loading',
                 component: () => import('@/views/WebDevelopGuide/pages/CjuiComp/packages/LoadingTheme.vue'),
+                show: true,
+                meta: {
+                    title: 'Cjui-Component',
+                    pageCodeMap: [
+                    ]
+                },
+            },
+            {
+                title: "WaterFall 瀑布流",
+                path: 'packages-waterfall',
+                fullPath: '/CjuiComponent/packages-waterfall',
+                component: () => import('@/views/WebDevelopGuide/pages/CjuiComp/packages/Waterfall.vue'),
                 show: true,
                 meta: {
                     title: 'Cjui-Component',

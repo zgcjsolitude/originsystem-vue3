@@ -1,0 +1,50 @@
+// 主题 - 3D丝滑
+// -------------------------
+
+// 基础样式
+@mixin ThreeDSilkyBasic {
+    opacity: 0.9;
+    transition: all 0.1s linear;
+    position: relative;
+    overflow: hidden;
+    
+    &:before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+        padding: 0px 30%;
+        top: 0;
+        left: 0;
+        height: 1px;
+        box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover:before {
+        left: 40%
+    }
+    &:active:before {
+        opacity: 0;
+    }
+}
+
+// 颜色混合器
+@mixin ThreeDSilkyColor($bgColor) {
+    background-color: lighten($color: $bgColor, $amount: 15%);
+    border: $bgColor;
+    color: #f2f2f2;
+    text-shadow: darken($color: $bgColor, $amount:30%) 0px 1px 2px;
+    box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset darken($color: $bgColor, $amount:30%) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset darken($color: $bgColor, $amount:2%) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+    
+    &:hover, &:focus {
+        background-color: lighten($color: $bgColor, $amount: 15%);
+        border: $bgColor;
+        color: #f2f2f2;
+        box-shadow: darken($color: rgba($bgColor, 0.5), $amount:30%) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba($bgColor, 0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.3) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+    }
+    &:active {
+        background-color: lighten($color: $bgColor, $amount: 15%);
+        border: $bgColor;
+        color: #f2f2f2;
+        box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset darken($color: rgba($bgColor, 0.5), $amount:30%) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.5) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+    }
+}

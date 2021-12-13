@@ -23,14 +23,14 @@
         <h3 class="wbg-title">LoadingTheme 主题组件</h3>
         <p class="wbg-intro">组件库提供了关于<code>LoadingFont</code>组件，提供了部分文字动画效果。</p>
         <div class="wbg-demo is-black is-padding is-around">
-            <el-button v-if="!LoadingFontShow" class="dazzle-light" type="primary" @click="LoadingFontShow=!LoadingFontShow">
+            <el-button v-if="!LoadingFontShow" class="cjui-dazzle-light" type="primary" @click="LoadingFontShow=!LoadingFontShow">
                 查 看
             </el-button>
             <LoadingFont v-else />
         </div>
         <p class="wbg-intro">组件库提供了关于<code>LoadingSolar</code>组件。</p>
         <div class="wbg-demo is-black is-padding is-around">
-            <el-button v-if="!LoadingSolarShow" class="dazzle-light" type="primary" @click="LoadingSolarShow=!LoadingSolarShow">
+            <el-button v-if="!LoadingSolarShow" class="cjui-dazzle-light" type="primary" @click="LoadingSolarShow=!LoadingSolarShow">
                 查 看
             </el-button>
             <LoadingSolar v-else />
@@ -39,7 +39,7 @@
         <h3 class="wbg-title">LoadingProgress 进度指示器</h3>
         <p class="wbg-intro">组件库提供了<code>LoadingProgress</code>组件，结合loading主题展示操作进度。</p>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="progressShow=!progressShow">
+            <el-button class="cjui-dazzle-light" type="primary" @click="progressShow=!progressShow">
                 查 看
             </el-button>
             <CjuiLoadingProgress 

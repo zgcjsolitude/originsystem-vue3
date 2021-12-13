@@ -5,7 +5,7 @@
         <h3 class="wbg-title">登录页</h3>
         <p class="wbg-intro">水平垂直居中登录页</p>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='LoginGreen'">
+            <el-button class="cjui-dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='LoginGreen'">
                 方块渐变
             </el-button> 
         </div>

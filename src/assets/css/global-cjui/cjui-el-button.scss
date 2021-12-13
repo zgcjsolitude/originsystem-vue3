@@ -1,0 +1,120 @@
+
+/*****
+  * =========== element-plus button ================ 
+  *** 
+  * === 
+*/
+@import '@/@cjui/css/theme-node/button/_mixins-dazzleLight.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-3dSilky.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-roundFull.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-pulse.scss';
+
+$brand-primary: #2cd6bf;
+$brand-success: #44d444;
+$brand-warning: #ff9800;
+$brand-danger: #de4b33;
+$brand-info: #9c9c9c;
+
+// button 炫光主题
+.el-button.cjui-dazzle-light {
+    @include DazzleLightBasic;
+
+    border-radius: 2px;
+
+    &.el-button--primary {
+        @include DazzleLightColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include DazzleLightColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include DazzleLightColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include DazzleLightColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include DazzleLightColor($brand-info);
+    }
+}
+
+// button 四周填充
+.el-button.cjui-round-full {
+    @include RoundFullBasic;
+
+    &.el-button--primary {
+        @include RoundFullColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include RoundFullColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include RoundFullColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include RoundFullColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include RoundFullColor($brand-info);
+    }
+}
+
+// button 3D丝滑
+.el-button.cjui-3d-silky {
+    @include ThreeDSilkyBasic;
+
+    border-radius: 2px;
+
+    &.el-button--primary {
+        @include ThreeDSilkyColor(darken($color: $brand-primary, $amount:30%));
+    }
+
+    &.el-button--success {
+        @include ThreeDSilkyColor(darken($color: $brand-success, $amount:30%));
+    }
+
+    &.el-button--warning {
+        @include ThreeDSilkyColor(darken($color: $brand-warning, $amount:30%));
+    }
+
+    &.el-button--danger {
+        @include ThreeDSilkyColor(darken($color: $brand-danger, $amount:30%));
+    }
+
+    &.el-button--info {
+        @include ThreeDSilkyColor(darken($color: $brand-info, $amount:30%));
+    }
+}
+
+// button 脉动
+.el-button.cjui-pulse {
+    @include PulseBasic;
+
+    &.el-button--primary {
+        @include PulseColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include PulseColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include PulseColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include PulseColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include PulseColor($brand-info);
+    }
+}

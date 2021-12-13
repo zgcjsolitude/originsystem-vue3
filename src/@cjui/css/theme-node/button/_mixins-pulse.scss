@@ -1,0 +1,30 @@
+// 主题 - 脉动
+// -------------------------
+
+// 基础样式
+@mixin PulseBasic {
+    background: transparent;
+    border: 2px solid;
+    transition: 0.25s;
+    border-radius: 0;
+}
+
+// 颜色混合器
+@mixin PulseColor($bgColor) {
+    color: $bgColor;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+        animation: cjui-button-pulse 1s;
+        border-color: lighten($color: $bgColor, $amount: 10%);
+        box-shadow: 0 0 0 0 lighten($color: $bgColor, $amount: 10%);
+    }
+}
+
+// 动画
+@keyframes cjui-button-pulse {
+    100% {
+        box-shadow: 0 0 0 1em rgba(255, 255, 255, 0);
+    }
+}

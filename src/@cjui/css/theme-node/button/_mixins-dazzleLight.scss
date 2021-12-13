@@ -38,17 +38,17 @@
 // 颜色混合器
 @mixin DazzleLightColor($color) {  // 
     &, &:hover, &:focus  {
-      color: $color;
-      border-color: darken($color: $color, $amount: 20%);
+        color: $color;
+        border-color: darken($color: $color, $amount: 20%);
     }
     &:hover, &:focus {
-      box-shadow: 0px 0px 2px 0 darken($color: $color, $amount: 20%);
+        box-shadow: 0px 0px 2px 0 darken($color: $color, $amount: 20%);
     }
     &:active {
-      color: darken($color: $color, $amount: 20%);
-      box-shadow: 0px 0px 4px 1px darken($color: $color, $amount: 20%);
+        color: darken($color: $color, $amount: 20%);
+        box-shadow: 0px 0px 4px 1px darken($color: $color, $amount: 20%);
     }
     &:before {
-      background: linear-gradient(120deg, transparent, darken($color: $color, $amount: 20%), transparent);
+        background: linear-gradient(120deg, transparent, darken($color: $color, $amount: 20%), transparent);
     }
 }

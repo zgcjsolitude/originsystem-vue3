@@ -5,7 +5,7 @@
         <h3 class="wbg-title">Header 主体区布局组件</h3>
         <p class="wbg-intro">含头部、内容区两部分移动端的常见布局组件。</p>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="fixedCompShow=!fixedCompShow;componentName='PmdHeader'">
+            <el-button class="cjui-dazzle-light" type="primary" @click="fixedCompShow=!fixedCompShow;componentName='PmdHeader'">
                 查看
             </el-button> 
         </div>

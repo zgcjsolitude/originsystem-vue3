@@ -1,9 +1,10 @@
 // cjui 公共样式
 @import '@/@cjui/css/cjui-class.scss';
 
-// project 公共样式
-@import '@/views/OSadmin/css/global.scss';
-@import '@/views/WebDevelopGuide/css/index.scss';
+// cjui 衍生样式
+@import './global-cjui/cjui-el-button.scss';
 
+// project 公共样式
+@import './global-list/OS-Admin.scss';
 @import './global-list/BW-OriginWorld.scss';
 

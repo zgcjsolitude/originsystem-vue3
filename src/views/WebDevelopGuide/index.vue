@@ -52,7 +52,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './css/element-ui/index.scss';
-
-@include ElbuttonDazzleLight;
+@import './css/index.scss';
 </style>

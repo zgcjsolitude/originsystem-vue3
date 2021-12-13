@@ -6,7 +6,7 @@
         <h3 class="wbg-title">粒子动效蒙版</h3>
         <p class="wbg-intro">置于box容器内，可为容器添加粒子动效蒙版。</p>
         <div class="wbg-demo is-black is-padding">
-            <el-button class="dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='ParticlesMask'">
+            <el-button class="cjui-dazzle-light" type="primary" @click="fullscreenDialog=true;componentName='ParticlesMask'">
                 星点蒙版
             </el-button> 
         </div>
