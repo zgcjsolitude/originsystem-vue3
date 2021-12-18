@@ -1,0 +1,23 @@
+// 主题 - 关闭填充
+// -------------------------
+
+// 基础样式
+@mixin CloseFullBasic {
+    background: transparent;
+    border: 2px solid;
+    transition: 0.25s;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+// 颜色混合器
+@mixin CloseFullColor($bgColor) {
+    color: $bgColor;
+
+    &:hover,
+    &:focus {
+        border-color: $bgColor;
+        box-shadow: inset -50px 0 0 0 $bgColor, inset 50px 0 0 0 $bgColor;
+        color: #f2f2f2;
+    }
+}

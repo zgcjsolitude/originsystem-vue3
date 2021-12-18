@@ -1,6 +1,6 @@
 <template>
     <!-- 根源世界 源星时间线 -->
-    <div class="OriginTimeline-contianer" v-loading="timelineLoading">
+    <div class="OriginTimeline-contianer">
         <el-timeline>
             <el-timeline-item v-for="(item, i) in timelinelist" :key="i" :timestamp="item.date" placement="top">
                 <div class="timeline-item">
@@ -10,11 +10,20 @@
                 </div>
             </el-timeline-item>
         </el-timeline>
+        
+
+        <cjui-loading-progress 
+            v-model:loading="timelineLoading" 
+            theme="3-light-rotate_0" 
+            modal="fullscreen" 
+            :fontshow="true"
+            :action="true">
+        </cjui-loading-progress>
     </div>
 </template>
 
 <script>
-import { onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref, toRefs, watch } from 'vue';
 import { Edit } from '@element-plus/icons';
 
 import { TimelineDataHook } from './js/data-hook';
@@ -24,21 +33,37 @@ export default {
     components: {
         Edit,
     },
+    props: {
+        tag: {
+            type: String,
+            default: ''
+        }
+    },
     setup(props, { emit }) {
+        const { tag } = toRefs(props);
+
         const { timelinelist, timelineLoading, getTimelineList } = TimelineDataHook();
+        function getData() {
+            getTimelineList({ tag: tag.value });
+        }
+
+        const paramsProps = computed(() => '' + tag.value);
+        watch(paramsProps, () => {
+            getData();
+        });
 
         function editNodeClick(node) {
             emit('editNodeClick', node)
         }
 
         onMounted(() => {
-            getTimelineList();
+            getData();
         });
 
         return {
             timelinelist, 
             timelineLoading, 
-            getTimelineList,
+            getData,
             editNodeClick
         }
     }

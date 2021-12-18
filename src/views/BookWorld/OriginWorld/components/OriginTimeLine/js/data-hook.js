@@ -4,9 +4,11 @@ import service from './service';
 export const TimelineDataHook = function() {
     const timelinelist = ref([]);
     const timelineLoading = ref(false);
-    async function getTimelineList() {
+    async function getTimelineList({ tag }) {
         timelineLoading.value = true;
-        timelinelist.value = await service.Return_timelinelist();
+        timelinelist.value = await service.Return_timelinelist({
+            tag,
+        });
         timelineLoading.value = false;
         _handTimelineList();
     }

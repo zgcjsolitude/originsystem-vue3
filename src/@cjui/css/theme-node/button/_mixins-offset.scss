@@ -1,0 +1,29 @@
+// 主题 - 交叠
+// -------------------------
+
+// 基础样式
+@mixin OffsetBasic {
+    background: none;
+    border: 2px solid;
+    transition: 0.25s;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-0.25em);
+    }
+}
+
+// 颜色混合器
+@mixin OffsetColor($bgColor) {
+    color: $bgColor;
+    box-shadow: 0.3em 0.3em 0 0 $bgColor, inset 0.3em 0.3em 0 0 $bgColor;
+
+    &:hover,
+    &:focus {
+        border-color: $bgColor;
+        box-shadow: 0 0 0 0  $bgColor, inset 6em 3.5em 0 0  $bgColor;
+        color: #f2f2f2;
+    }
+}

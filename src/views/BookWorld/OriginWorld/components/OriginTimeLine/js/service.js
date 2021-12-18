@@ -1,8 +1,8 @@
 import { handleGetData, handlePostData } from '@/utils/utils-api';
 
 export default {
-	Return_timelinelist() {
-        return handleGetData('/timelinelist', {}, false, '获取源星时间线表数据信息', 'only_array')
+	Return_timelinelist({ tag = '' }) {
+        return handleGetData('/timelinelist', { tag }, false, '获取源星时间线表数据信息', 'only_array')
 	},
 	Add_timeline({ userName, userPassword, world, tag, year, month, day, intro, remarks }, ErrorMsg = true) { 
         return handlePostData('/timeline/add', { userName, userPassword, world, tag, year, month, day, intro, remarks }, ErrorMsg, '增加源星时间线表数据信息') 

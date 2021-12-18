@@ -1,0 +1,28 @@
+// 主题 - 提升
+// -------------------------
+
+// 基础样式
+@mixin RaiseBasic {
+    background: transparent;
+    border: 2px solid;
+    transition: 0.25s;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-0.25em);
+    } 
+}
+
+// 颜色混合器
+@mixin RaiseColor($bgColor) {
+    color: $bgColor;
+
+    &:hover,
+    &:focus {
+        border-color: lighten($color: $bgColor, $amount: 10%);
+        box-shadow: 0 0.5em 0.5em -0.4em lighten($color: $bgColor, $amount: 10%);
+        color: #f2f2f2;
+    }
+}

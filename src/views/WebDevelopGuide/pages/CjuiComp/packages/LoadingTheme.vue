@@ -42,9 +42,9 @@
             <el-button class="cjui-dazzle-light" type="primary" @click="progressShow=!progressShow">
                 查 看
             </el-button>
-            <CjuiLoadingProgress 
+            <cjui-loading-progress  
                 v-model:loading="progressShow" 
-                theme="3-light-rotate_0" 
+                theme="3-light-rotate_0"
                 modal="fullscreen" 
                 :fontshow="true"
                 :action="true"
@@ -57,7 +57,6 @@
 import CjuiLoadingTheme from '@/@cjui/components/packages/LoadingTheme/index.vue';
 import LoadingFont from '@/@cjui/components/packages/LoadingTheme/loading-font.vue';
 import LoadingSolar from '@/@cjui/components/packages/LoadingTheme/loading-solar.vue';
-import CjuiLoadingProgress from '@/@cjui/components/packages/LoadingProgress/index.vue';
 import { ref } from '@vue/reactivity';
 
 export default {
@@ -65,7 +64,6 @@ export default {
         CjuiLoadingTheme,
         LoadingFont,
         LoadingSolar,
-        CjuiLoadingProgress
     },
     setup() {
         const loadingList = [

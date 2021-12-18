@@ -1,6 +1,6 @@
 /**
  * 前端全局配置对象GlabalConfig
- *pack time: 2020/03/18
+ * pack time: 2020/03/18
  * */
 var GlobalConfig = {
     //数据接口调用地址

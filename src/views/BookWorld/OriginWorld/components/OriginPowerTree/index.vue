@@ -1,11 +1,19 @@
 <template>
     <!-- 根源世界 源权体系表树 -->
-    <div class="OriginPowerTree-contianer" v-loading="treeLoading">
+    <div class="OriginPowerTree-contianer">
         <el-tree v-if="treeShow" node-key="id"
             :data="treeData" 
             :props="defaultProps" 
             :default-expanded-keys="defaultExpandedKeys"
             :render-content="renderContent"
+        />
+
+        <cjui-loading-progress 
+            v-model:loading="treeLoading" 
+            theme="3-light-rotate_0" 
+            modal="fullscreen" 
+            :fontshow="true"
+            :action="true"
         />
     </div>
 </template>

@@ -4,6 +4,13 @@
     "dependencies": [],
     "updateLog": [
         {
+            "title": "cjui-component@0.7.0",
+            "date": "2021/12/05",
+            "textList": [
+                "1. 新增 样式栏 - 按钮样式 - 若干样式。"
+            ]
+        },
+        {
             "title": "cjui-component@0.6.0",
             "date": "2021/12/05",
             "textList": [

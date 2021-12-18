@@ -40,6 +40,10 @@
 	color: #14a7b6;
   	border-color: $brand-primary;
 }
+:deep(.el-input.is-disabled .el-input__inner) {
+    background-color: #2b3238;
+    border-color: transparent;
+}
 
 // drawer
 :deep(.el-drawer) {

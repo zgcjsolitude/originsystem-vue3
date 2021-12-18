@@ -5,9 +5,13 @@
   * === 
 */
 @import '@/@cjui/css/theme-node/button/_mixins-dazzleLight.scss';
-@import '@/@cjui/css/theme-node/button/_mixins-3dSilky.scss';
 @import '@/@cjui/css/theme-node/button/_mixins-roundFull.scss';
 @import '@/@cjui/css/theme-node/button/_mixins-pulse.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-closeFull.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-raise.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-offset.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-3dSilky.scss';
+@import '@/@cjui/css/theme-node/button/_mixins-bubbles.scss';
 
 $brand-primary: #2cd6bf;
 $brand-success: #44d444;
@@ -67,6 +71,106 @@ $brand-info: #9c9c9c;
     }
 }
 
+// button 关闭填充
+.el-button.cjui-close-full {
+    @include CloseFullBasic;
+
+    &.el-button--primary {
+        @include CloseFullColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include CloseFullColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include CloseFullColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include CloseFullColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include CloseFullColor($brand-info);
+    }
+}
+
+// button 脉动
+.el-button.cjui-pulse {
+    @include PulseBasic;
+
+    &.el-button--primary {
+        @include PulseColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include PulseColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include PulseColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include PulseColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include PulseColor($brand-info);
+    }
+}
+
+// button 提升
+.el-button.cjui-raise {
+    @include RaiseBasic;
+
+    &.el-button--primary {
+        @include RaiseColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include RaiseColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include RaiseColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include RaiseColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include RaiseColor($brand-info);
+    }
+}
+
+// button 交叠
+.el-button.cjui-offset {
+    @include OffsetBasic;
+
+    &.el-button--primary {
+        @include OffsetColor($brand-primary);
+    }
+
+    &.el-button--success {
+        @include OffsetColor($brand-success);
+    }
+
+    &.el-button--warning {
+        @include OffsetColor($brand-warning);
+    }
+
+    &.el-button--danger {
+        @include OffsetColor($brand-danger);
+    }
+
+    &.el-button--info {
+        @include OffsetColor($brand-info);
+    }
+}
+
 // button 3D丝滑
 .el-button.cjui-3d-silky {
     @include ThreeDSilkyBasic;
@@ -94,27 +198,9 @@ $brand-info: #9c9c9c;
     }
 }
 
-// button 脉动
-.el-button.cjui-pulse {
-    @include PulseBasic;
+// button 3D丝滑
+.el-button.cjui-bubbles {
+    @include BubblesBasic;
 
-    &.el-button--primary {
-        @include PulseColor($brand-primary);
-    }
-
-    &.el-button--success {
-        @include PulseColor($brand-success);
-    }
-
-    &.el-button--warning {
-        @include PulseColor($brand-warning);
-    }
-
-    &.el-button--danger {
-        @include PulseColor($brand-danger);
-    }
-
-    &.el-button--info {
-        @include PulseColor($brand-info);
-    }
+    border-radius: 2px;
 }

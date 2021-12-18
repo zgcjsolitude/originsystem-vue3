@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-drawer direction="ltr" size="100%"
-            v-model="visible"
+            :model-value="visible"
             :title="formModelParams._title || '编辑时间线信息'"
             @open="openEvent"
             @close="closeEvent"
@@ -16,6 +16,7 @@
                 <el-form-item label="纪年" prop="tag">
                     <el-select size="small" placeholder="请选择" popper-class="bw-originworld" v-model="formModel.tag">
                         <el-option label="源历" value="源历"></el-option>
+                        <el-option label="光曦年代" value="光曦年代"></el-option>
                     </el-select>
                 </el-form-item>
 
@@ -59,7 +60,7 @@
 import { ref, reactive, onMounted, inject, toRefs, getCurrentInstance, watch } from "vue";
 import { ElMessage } from 'element-plus';
 
-import service from '../components/OriginTimeLine/js/service';
+import service from '../../components/OriginTimeLine/js/service';
 
 const props = defineProps({
     visible: {
@@ -110,6 +111,11 @@ function clearFormModel() {
     formModel.day = '01';
     formModel.intro = '';
     formModel.remarks = '';
+    ['tag'].forEach(key => {
+        if (formModelParams.value[key]) {
+            formModel[key] = formModelParams.value[key];
+        }
+    });
 }
 
 function addFormModel() {
@@ -197,6 +203,12 @@ function openEvent() {
     isModify.value = false;
     if (formModelParams.value._action === 'modify') {
         Object.keys(formModel).forEach(key => {
+            if (formModelParams.value[key]) {
+                formModel[key] = formModelParams.value[key];
+            }
+        });
+    } else {
+        ['tag'].forEach(key => {
             if (formModelParams.value[key]) {
                 formModel[key] = formModelParams.value[key];
             }
