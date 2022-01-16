@@ -1,7 +1,7 @@
 <template>
-    <bs-loading-progress :loading="!Boolean(content)">
+    <cjui-loading-progress :loading="!Boolean(content)">
 	    <div v-html="content" class="markdown-body"></div>
-    </bs-loading-progress>
+    </cjui-loading-progress>
 </template> 
 
 <script>

@@ -7,7 +7,7 @@
                   </el-button>
             </div>
 
-            <cjui-elplus-table border
+            <cjui-el-table border
                 :height="clientHeight - 210"
                 :loading="tableLoading"
                 :columns="columns"
@@ -16,7 +16,7 @@
                 :paginationClass="vuexProfilesgetter"
                 @sizeChange="sizeChange"
                 @currentChange="currentChange">
-            </cjui-elplus-table>
+            </cjui-el-table>
         </div>
 
         <!-- 用户授权 -->

@@ -15,9 +15,10 @@ export default {
         SystemGuide: '系统指南'
     },
     osAdmin: {
+        BusinessManagement: '业务管理',
+        BMblogspace: '博客空间',
         Personal: '个人中心',
         PersonalSpace: '个人空间',
-        BlogSpace: '博客空间',
         UserExtract: '用户摘录',
         UserDataMsgSetting: '数据信息',
         UserDms: '用户文件',

@@ -7,8 +7,15 @@ axios.defaults.baseURL = GlobalConfig.ApiBaseUrl
 axios.defaults.timeout = 120000
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.transformRequest = (data) => {  // 发送参数前进行处理
-	data = utils.hex_encodeURIComponent(data)
-	return qs.stringify(data, { arrayFormat: 'brackets' })  // 用qs格式化数据为表单类型
+	if (data) {
+		Object.keys(data).forEach(key => {
+			if ([null, undefined].includes(data[key])) {
+				delete data[key];
+			}
+		})
+		data = utils.hex_encode(data)
+		return qs.stringify(data, { arrayFormat: 'brackets' })  // 用qs格式化数据为表单类型
+	}
 };
 
 // app
@@ -41,6 +48,9 @@ import 'animate.css'
 
 // font-awesome
 import './assets/libs/font-awesome-4.7.0/css/font-awesome.min.css'
+
+// md-editor-v3
+import 'md-editor-v3/lib/style.css';
 
 // vue3-lazyload
 import VueLazyLoad from 'vue3-lazyload'

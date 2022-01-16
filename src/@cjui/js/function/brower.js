@@ -1,4 +1,3 @@
-
 export default {
     // ======================
     // browser.js
@@ -7,125 +6,32 @@ export default {
     /** 编码 操作
    * @param data 代表 编码对象
    **/
-    // encodeURI 编码字符串
-    hex_escape(data) {
-        let datalist = data;
+    // encode 编码 data - 编码对象 | type - 编码方式
+    hex_encode(data, type = 'encodeURIComponent') {
+        const encodeMethods = {
+            encodeURI: (encodeData) => encodeURI(encodeData),
+            encodeURIComponent: (encodeData) => encodeURIComponent(encodeData),
+        }
 
-        if (typeof datalist != 'object') return escape(datalist);
+        function replacePer(str) {
+            return typeof str === 'string' ? str.replace('%', '$per$') : str;
+        }
 
-        if (Array.isArray(datalist)) {
-            for (let i = 0; i < datalist.length; i++) {
-                for (let a in datalist[i]) {
-                    datalist[i][a] = escape(datalist[i][a])
-                }
-            }
+        if (typeof data !== 'object') {
+            return encodeMethods[type](replacePer(data));
+
+        } else if (Array.isArray(data)) {
+            data.forEach(el => {
+                el = encodeMethods[type](replacePer(el));
+            });
+
         } else {
-            for (let a in datalist) {
-                datalist[a] = escape(datalist[a])
+            for (let key in data) {
+                data[key] = encodeMethods[type](replacePer(data[key]));
             }
         }
 
-        return datalist;
-    },
-    // encodeURI 解码字符串
-    hex_unescape(data) {
-        let datalist = data;
-
-        if (typeof datalist != 'object') return unescape(datalist);
-
-        if (Array.isArray(datalist)) {
-            for (let i = 0; i < datalist.length; i++) {
-                for (let a in datalist[i]) {
-                    datalist[i][a] = unescape(datalist[i][a])
-                }
-            }
-        } else {
-            for (let a in datalist) {
-                datalist[a] = unescape(datalist[a])
-            }
-        }
-
-        return datalist;
-    },
-    // encodeURI 编码字符串
-    hex_encodeURI(data) {
-        let datalist = data;
-
-        if (typeof datalist != 'object') return encodeURI(datalist);
-
-        if (Array.isArray(datalist)) {
-            for (let i = 0; i < datalist.length; i++) {
-                for (let a in datalist[i]) {
-                    datalist[i][a] = encodeURI(datalist[i][a])
-                }
-            }
-        } else {
-            for (let a in datalist) {
-                datalist[a] = encodeURI(datalist[a])
-            }
-        }
-
-        return datalist;
-    },
-    // encodeURI 解码字符串
-    hex_decodeURI(data) {
-        let datalist = data;
-
-        if (typeof datalist != 'object') return decodeURI(datalist);
-
-        if (Array.isArray(datalist)) {
-            for (let i = 0; i < datalist.length; i++) {
-                for (let a in datalist[i]) {
-                    datalist[i][a] = decodeURI(datalist[i][a])
-                }
-            }
-        } else {
-            for (let a in datalist) {
-                datalist[a] = decodeURI(datalist[a])
-            }
-        }
-
-        return datalist;
-    },
-    // encodeURIComponent 编码字符串
-    hex_encodeURIComponent(data) {
-        let datalist = data;
-
-        if (typeof datalist != 'object') return encodeURIComponent(datalist);
-
-        if (Array.isArray(datalist)) {
-            for (let i = 0; i < datalist.length; i++) {
-                for (let a in datalist[i]) {
-                    datalist[i][a] = encodeURIComponent(datalist[i][a])
-                }
-            }
-        } else {
-            for (let a in datalist) {
-                datalist[a] = encodeURIComponent(datalist[a])
-            }
-        }
-
-        return datalist;
-    },
-    // encodeURIComponent 解码字符串
-    hex_decodeURIComponent(data) {
-        let datalist = data;
-
-        if (typeof datalist != 'object') return decodeURIComponent(datalist);
-
-        if (Array.isArray(datalist)) {
-            for (let i = 0; i < datalist.length; i++) {
-                for (let a in datalist[i]) {
-                    datalist[i][a] = decodeURIComponent(datalist[i][a])
-                }
-            }
-        } else {
-            for (let a in datalist) {
-                datalist[a] = decodeURIComponent(datalist[a])
-            }
-        }
-
-        return datalist;
+        return data;
     },
 
     /** localStorage 操作

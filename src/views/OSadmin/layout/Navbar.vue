@@ -10,7 +10,7 @@
 			
       		<el-tooltip content="情景模式切换" effect="dark" placement="bottom">
       		  	<div class="right-menu-item hover-effect">
-      		  	  	<i v-if="vuexProfiles == 'day'" class="el-icon-picture" @click="changeProfiles('night')"></i>
+      		  	  	<i v-if="storeProfiles == 'day'" class="el-icon-picture" @click="changeProfiles('night')"></i>
       		  	  	<i v-else class="el-icon-picture-outline" @click="changeProfiles('day')"></i>
       		  	</div>
       		</el-tooltip>
@@ -55,7 +55,7 @@ export default {
 	setup() {
 		const store = useStore();
         const theme = computed(() => store.getters['OsAdmin/vuexProfilesgetter']);
-		const vuexProfiles = computed(() => store.state.OsAdmin.vuexProfiles);
+		const storeProfiles = computed(() => store.state.OsAdmin.storeProfiles);
 		const vuexUserHeaderImggetter = computed(() => store.getters.vuexUserHeaderImggetter);
 		function changeProfiles(value) {
     		store.commit("OsAdmin/vuexProfilesChange", value);
@@ -77,7 +77,7 @@ export default {
 
 		return {
 			theme,
-			vuexProfiles,
+			storeProfiles,
 			vuexUserHeaderImggetter,
 			changeProfiles,
 			logout,

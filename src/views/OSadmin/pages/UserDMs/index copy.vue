@@ -67,7 +67,7 @@
         </el-table>
         <el-select
           v-model="fileSetMsg.blogClass"
-          :popper-class="'is-' + vuexProfiles"
+          :popper-class="'is-' + storeProfiles"
           placeholder="请选择"
         >
           <el-option

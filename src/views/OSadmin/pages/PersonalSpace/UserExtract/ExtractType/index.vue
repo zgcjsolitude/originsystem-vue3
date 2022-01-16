@@ -6,7 +6,7 @@
             </el-button>
         </div>
         
-        <cjui-elplus-table border
+        <cjui-el-table border
             :height="clientHeight - 210"
             :loading="tableLoading"
             :columns="columns"
@@ -15,7 +15,7 @@
             :paginationClass="storeProfilesgetter"
             @sizeChange="sizeChange"
             @currentChange="currentChange">
-        </cjui-elplus-table>
+        </cjui-el-table>
 
         <EditDialog v-model:visible="extractTypeDialog" :formModelParams="newExtractType" @updateTableData="updateTableData" />
   </div>

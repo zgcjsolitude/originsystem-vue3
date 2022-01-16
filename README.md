@@ -16,11 +16,15 @@
 7. 指定位置埋点函数
 10. 系统功能树、系统指南模块、嵌入式开发
 11. MongoDB时间戳转化
-12. 数据库自动化脚本、bin 脚本文件夹
 13. 彩带效果 分隔下边框 组件封装
 14. 源权树无子集可拖拽 和 全修改
 15. 鼠标点击动画
-17. 封装组件分页器脱离jsx写法
+18. 重构路由埋点
+19. 数据库定时脚本
+20. 富文本文章编辑器 + markdown编辑器
+21. nginx代理
+22. token
+24. 博文编辑页面切换事件重复
 
 ## 长久需求
 1. 国际化策略完善
@@ -36,7 +40,7 @@
 4. element-resize-detector  -- 元素宽度监听器
 6. element-plus + @element-plus/icons + @element-plus/icons-vue -- element-ui vue3版本及图标库
 7. screenfull -- screenfull全屏触发器，目前依赖包screenfull版本>5，在vue中全屏功能无效，请安装指定版本4.2.1
-8. @vitejs/plugin-vue-jsx -- JSX语法支持（vite配置失败，目前无法使用jsx语法）
+8. @vitejs/plugin-vue-jsx -- JSX语法支持
 9. animate.css -- 过度动画
 10. clipboard -- 复制插件
 11. vue-i18n -- 国际化插件
@@ -48,7 +52,6 @@
 2. particles@2.0.0
 ### 资源src/assets/libs 包
 1. font-awesome-4.7.0  -- font-awesome图标库
-
 
 ## 开发日志
 ### github

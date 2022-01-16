@@ -1,23 +1,31 @@
 export const menuListOpt = [
     { 
-        icon: 'el-icon-s-custom', 
+        icon: 'fa fa-user-circle', 
         label: 'Personal', 
         path: '/osadmin/index',
         authority: false,
         children: [] 
     },
     { 
-        icon: 'el-icon-s-claim', 
+        icon: 'fa fa-qrcode', 
+        label: 'BusinessManagement', 
+        path: '',
+        authority: '4',
+        children: [
+            { 
+                icon: '', 
+                label: 'BMblogspace',
+                path: '/osadmin/BM-BlogSpace',
+                authority: '4-1',
+            },
+        ] 
+    },
+    { 
+        icon: 'fa fa-send', 
         label: 'PersonalSpace', 
         path: '',
         authority: '2',
         children: [ 
-            { 
-                icon: '', 
-                label: 'BlogSpace',
-                path: '/osadmin/BlogSpace',
-                authority: '2-1',
-            },
             { 
                 icon: '', 
                 label: 'UserExtract',
@@ -33,7 +41,7 @@ export const menuListOpt = [
         ] 
     },
     { 
-        icon: 'el-icon-s-management', 
+        icon: 'fa fa-share-alt-square', 
         label: 'SystemCenter', 
         path: '',
         authority: '3',
@@ -59,7 +67,7 @@ export const menuListOpt = [
         ] 
     },
     { 
-        icon: 'el-icon-s-promotion', 
+        icon: 'fa fa-rebel', 
         label: 'SystemBuilder', 
         path: '',
         authority: '1',
@@ -73,7 +81,7 @@ export const menuListOpt = [
         ] 
     },
     { 
-        icon: 'el-icon-s-data', 
+        icon: 'fa fa-bar-chart', 
         label: 'WebsiteGuard', 
         path: '',
         authority: '4',

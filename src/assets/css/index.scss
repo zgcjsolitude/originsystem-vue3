@@ -101,3 +101,22 @@ body {
 .h-100 {
     height: 100%;
 }
+
+/* flex layout */ 
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    .ml-auto {
+        margin-left: auto;
+    }
+    .mr-auto {
+        margin-right: auto;
+    }
+    .flex-item {
+        margin-bottom: 10px;
+    }
+    .flex-item + .flex-item {
+        margin-left: 10px;
+    }
+}

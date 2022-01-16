@@ -86,6 +86,9 @@ $ElNavChildH: 42px; // 导航二级行高
   	  	line-height: $ElNavChildH;
   	  	min-width: unset;
   	}
+ 	:deep(i.fa) {
+ 	  	margin-right: 8px;
+ 	}
 }
 
 // color

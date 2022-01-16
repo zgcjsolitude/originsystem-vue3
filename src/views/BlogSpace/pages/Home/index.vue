@@ -1,5 +1,5 @@
 <template>
-    <bs-loading-progress class="BlogSpaceHomeIndex container-xl" :loading="blogListLoading">
+    <cjui-loading-progress class="BlogSpaceHomeIndex container-xl" :loading="blogListLoading">
 		<div v-if="stepSign === 'blogList'" class="row no-gutters blogList_container">
 			<cjui-wfrow class="col-12 blogList_box" ref="BlogSpaceHomeIndex" id="BlogSpaceHomeIndex" :count="5" :xs="1" :sm="3" :md="4" :lg="5">
 				<cjui-wfcol v-for="(item, i) in blogList" :key="i">
@@ -13,7 +13,7 @@
 				<BlogView :content="blogContent" />
 			</div>
     	</div>
-    </bs-loading-progress>
+    </cjui-loading-progress>
 </template>
 
 <script>

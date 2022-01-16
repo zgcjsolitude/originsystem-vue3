@@ -11,7 +11,7 @@
             @add="openAddDrawer"
         />
 
-        <FilterDrawer v-model:visible="filterDrawer" :formModelParams="filterDrawerParams" @updateParmas="updateParmasEvent" />
+        <FilterDrawer v-model:visible="filterDrawer" :formModelParams="filterDrawerParams" @updateParams="updateParmasEvent" />
         
         <EditDrawer v-model:visible="editDrawer" :formModelParams="editDrawerParams" @updateData="updateData" />
     </div>

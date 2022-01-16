@@ -1,7 +1,7 @@
 // const OSfront = () => import('@/views/OriginSystem/front/index.vue')
 import OSadmin from '@/views/OSadmin/index.vue'
 import OSadminIndex from '@/views/OSadmin/pages/Index/index.vue'
-import OSadminBlogSpace from '@/views/OSadmin/pages/PersonalSpace/BlogSpace/index.vue'
+import OSadminbmBlogspace from '@/views/OSadmin/pages/Business/BlogSpace/index.vue'
 import OSadminUserExtract from '@/views/OSadmin/pages/PersonalSpace/UserExtract/index.vue'
 import OSadminUserDataMsg from '@/views/OSadmin/pages/PersonalSpace/UserDataMsg/index.vue'
 import OSadminUserDMs from '@/views/OSadmin/pages/UserDMs/index.vue'
@@ -26,14 +26,13 @@ export default [
                 },
             }, 
             {
-                path: 'BlogSpace', component: OSadminBlogSpace,
+                path: 'BM-BlogSpace', component: OSadminbmBlogspace,
                 meta: {
-                    requireAuth: '2-1',
+                    requireAuth: false,
                     pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: 'KAJ1635434627174' }
                     ]
                 },
-            }, 
+            },
             {
                 path: 'userextract', component: OSadminUserExtract,
                 meta: {

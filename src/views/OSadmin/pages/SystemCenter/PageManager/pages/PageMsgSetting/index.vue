@@ -6,7 +6,7 @@
             </div>
         </div>
 
-        <cjui-elplus-table border
+        <cjui-el-table border
             :height="clientHeight - 210"
             :loading="tableLoading"
             :columns="columns"
@@ -15,7 +15,7 @@
             :paginationClass="storeProfilesgetter"
             @sizeChange="sizeChange"
             @currentChange="currentChange">
-        </cjui-elplus-table>
+        </cjui-el-table>
 
         <EditDrawer v-model:visible="editDrawer" :formModelParams="editDrawerParams" @updateTableData="updateTableData" />
     </div>
@@ -47,7 +47,7 @@ async function getTableData() {
     });
     tableLoading.value = false;
     tableData.value = data;
-    pagination.totalCount = count;
+    pagination.total = count;
 }
 
 const columns = computed(() => [

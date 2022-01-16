@@ -15,9 +15,10 @@ export default {
         SystemGuide: 'System Guide'
     },
     osAdmin: {
+        BusinessManagement: 'Business Management',
+        BMblogspace: 'BM-BlogSpace',
         Personal: 'Personal',
         PersonalSpace: 'Personal Space',
-        BlogSpace: 'BlogSpace',
         UserExtract: 'UserExtract',
         UserDataMsg: 'UserDataMsg',
         UserDms: 'userDms',

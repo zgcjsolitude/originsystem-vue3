@@ -6,6 +6,12 @@ export const navListOpt = [
         active: true
     },
     {
+        name: 'Article',
+        path: '/BlogSpace/article',
+        fullPath: '/BlogSpace/article',
+        active: true
+    },
+    {
         name: 'Classify',
         path: '/BlogSpace/classify',
         fullPath: '/BlogSpace/classify',

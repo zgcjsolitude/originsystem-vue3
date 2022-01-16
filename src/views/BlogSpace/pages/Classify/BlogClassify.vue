@@ -1,5 +1,5 @@
 <template>
-	<bs-loading-progress class="BlogClassify container-xl" :loading="blogClassListLoading">
+	<cjui-loading-progress class="BlogClassify container-xl" :loading="blogClassListLoading">
 		<div class="row no-gutters blog_list">
 			<div class="col-12 col-md-6 col-xl-4 blog_list_item" v-for="(item, i) in blogClassList" :key="i">
         		<div class="list_item_left">
@@ -33,7 +33,7 @@
        			</div>
 			</div>
 		</div>
-    </bs-loading-progress>
+    </cjui-loading-progress>
 </template>
 
 <script >

@@ -6,12 +6,13 @@ import CjuiLoadingProgress from '@/@cjui/components/packages/LoadingProgress/ind
 import CjuiMouseBox from '@/@cjui/components/packages/MouseBox/index.vue';
 import CjuiWfrow from '@/@cjui/components/packages/Waterfall/Wfrow.vue';
 import CjuiWfcol from '@/@cjui/components/packages/Waterfall/Wfcol.vue';
-import CjuiElplusTable from '@/@cjui/components/webUI/ElementPlus/packages/table/main.jsx';
+import CjuiElTable from '@/@cjui/components/webUI/ElementPlus/packages/table/main.vue';
 
 // 根源系统前台 全局注册组件
 
+// 根源系统后台 全局注册组件
+
 // 博客空间 全局注册组件
-import BSLoadingProgress from './blog-space/LoadingProgress.vue';
 
 // CJUI前端指南 全局注册组件
 import WBGfullscreenDialog from './web-develop-guide/FullscreenDialog.vue';
@@ -24,12 +25,13 @@ export const ComponentInstall = function(app) {
     app.component('CjuiMouseBox', CjuiMouseBox);
     app.component('CjuiWfrow', CjuiWfrow);
     app.component('CjuiWfcol', CjuiWfcol);
-    app.component('CjuiElplusTable', CjuiElplusTable);
+    app.component('CjuiElTable', CjuiElTable);
 
     // 根源系统前台 全局注册组件
 
+    // 根源系统后台 全局注册组件
+
     // 博客空间 全局注册组件
-    app.component('BsLoadingProgress', BSLoadingProgress);
 
     // CJUI前端指南 全局注册组件
     app.component('WBGfullscreenDialog', WBGfullscreenDialog);
