@@ -1,23 +1,12 @@
-// const OSfront = () => import('@/views/OriginSystem/front/index.vue')
-import OSadmin from '@/views/OSadmin/index.vue'
-import OSadminIndex from '@/views/OSadmin/pages/Index/index.vue'
-import OSadminbmBlogspace from '@/views/OSadmin/pages/Business/BlogSpace/index.vue'
-import OSadminUserExtract from '@/views/OSadmin/pages/PersonalSpace/UserExtract/index.vue'
-import OSadminUserDataMsg from '@/views/OSadmin/pages/PersonalSpace/UserDataMsg/index.vue'
-import OSadminUserDMs from '@/views/OSadmin/pages/UserDMs/index.vue'
-import OSadminSystemMsg from '@/views/OSadmin/pages/SystemCenter/SystemMsg/index.vue'
-import OSadminSystemExtract from '@/views/OSadmin/pages/SystemCenter/SystemExtract/index.vue'
-import OSadminPageManager from '@/views/OSadmin/pages/SystemCenter/PageManager/index.vue'
-import OSadminBuilderUserSet from '@/views/OSadmin/pages/BuilderUser/BuilderUserSet/index.vue'
-import OSadminWebAccessMonitoring from '@/views/OSadmin/pages/WebsiteGuard/WebAccessMonitoring/index.vue'
+// import OSadminUserDMs from '@/views/OSadmin/pages/UserDMs/index.vue'
 
 export default [
     { path: "/osadmin", redirect: '/osadmin/index' }, 
     { 
-        path: "/osadmin", component: OSadmin,
+        path: "/osadmin", component: () => import('@/views/OSadmin/index.vue'),
         children: [
             {
-                path: 'index', component: OSadminIndex,
+                path: 'index', component: () => import('@/views/OSadmin/pages/Index/index.vue'),
                 meta: {
                     requireAuth: false,
                     pageCodeMap: [
@@ -26,7 +15,7 @@ export default [
                 },
             }, 
             {
-                path: 'BM-BlogSpace', component: OSadminbmBlogspace,
+                path: 'BM-BlogSpace', component: () => import('@/views/OSadmin/pages/Business/BlogSpace/index.vue'),
                 meta: {
                     requireAuth: false,
                     pageCodeMap: [
@@ -34,63 +23,61 @@ export default [
                 },
             },
             {
-                path: 'userextract', component: OSadminUserExtract,
+                path: 'BM-BookWorld', component: () => import('@/views/OSadmin/pages/Business/BookWorld/index.vue'),
                 meta: {
-                    requireAuth: '2-2',
+                    requireAuth: false,
                     pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: 'RPR1635434704133' }
+                    ]
+                },
+            },
+            {
+                path: 'BM-ExtractNote', component: () => import('@/views/OSadmin/pages/Business/ExtractNote/index.vue'),
+                meta: {
+                    requireAuth: false,
+                    pageCodeMap: [
+                    ]
+                },
+            },
+            {
+                path: 'HomeSetting', component: () => import('@/views/OSadmin/pages/SystemCenter/HomeSetting/index.vue'),
+                meta: {
+                    requireAuth: false,
+                    pageCodeMap: [
+                        { tagList: [], tagValueList: [], pageCode: '' }
                     ]
                 },
             }, 
             {
-                path: 'UserDataMsg', component: OSadminUserDataMsg,
+                path: 'BusinessSetting', component: () => import('@/views/OSadmin/pages/SystemCenter/BusinessSetting/index.vue'),
                 meta: {
-                    requireAuth: '2-3',
+                    requireAuth: false,
                     pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: 'CRS1635434757794' }
+                        { tagList: [], tagValueList: [], pageCode: '' }
                     ]
                 },
             }, 
             {
-                path: 'systemmsg', component: OSadminSystemMsg,
+                path: 'PageManager', component: () => import('@/views/OSadmin/pages/SystemCenter/PageManager/index.vue'),
                 meta: {
-                    requireAuth: '3-2',
-                    pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: 'PHP1635435053936' }
-                    ]
-                },
-            }, 
-            {
-                path: 'systemextract', component: OSadminSystemExtract,
-                meta: {
-                    requireAuth: '3-1',
-                    pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: 'OWJ1635435149692' }
-                    ]
-                },
-            },  
-            {
-                path: 'PageManager', component: OSadminPageManager,
-                meta: {
-                    requireAuth: '3-3',
+                    requireAuth: false,
                     pageCodeMap: [
                         { tagList: [], tagValueList: [], pageCode: 'TUS1635435212159' }
                     ]
                 },
             }, 
             {
-                path: 'BuilderUserSet', component: OSadminBuilderUserSet,
+                path: 'BuilderUserSet', component: () => import('@/views/OSadmin/pages/BuilderUser/BuilderUserSet/index.vue'),
                 meta: {
-                    requireAuth: '1-1',
+                    requireAuth: false,
                     pageCodeMap: [
                         { tagList: [], tagValueList: [], pageCode: 'VPM1635435279691' }
                     ]
                 },
             }, 
             {
-                path: 'WebAccessMonitoring', component: OSadminWebAccessMonitoring,
+                path: 'WebAccessMonitoring', component: () => import('@/views/OSadmin/pages/WebsiteGuard/WebAccessMonitoring/index.vue'),
                 meta: {
-                    requireAuth: '4-1',
+                    requireAuth: false,
                     pageCodeMap: [
                         { tagList: [], tagValueList: [], pageCode: 'XBR1635435367117' }
                     ]

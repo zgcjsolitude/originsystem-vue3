@@ -19,26 +19,6 @@ export default {
     },
     /* end */
     // =============================
-    // 获取用户数据信息，sign：allsign - 分组列表、 extractType - 摘录分组、blogClass - 博文分组、fileClass - 文件分组
-    async _Return_usermsg({ sign, userName }, ErrorMsg = false) {  
-        try {
-            let res = await axios.get('/usermsg?sign=' + sign + '&userName=' + userName);
-            let { code, data, message } = res.data;
-            if (code === 200 && data.length > 0) { 
-                return { data };
-            }
-            if (ErrorMsg) {
-                ElMessage.error(message);
-            }
-            return { data: [] };
-        } catch(err) {
-            let msgOpt = {
-                blogClass: '博文分组',
-            }
-            ElMessage.warning(`获取${msgOpt[sign]}信息接口内部错误!!`);
-            return { data: [] };
-        }
-    },
     // 文件设置信息获取，sign：blog - 博文列表
     async _Return_userfilemsglist({ userName, sign, className, page = 1, num = 10}, ErrorMsg = false) {  
         try {
@@ -57,23 +37,6 @@ export default {
             }
             ElMessage.warning(`获取${msgOpt[sign]}信息接口内部错误!!`);
             return { data: [], count: 0 }
-        }
-    },
-    // 获取根源系统数据信息，sign：extractType - 摘录分组、
-    async _Return_systemmsglist({ sign, userName }, ErrorMsg = false) {  
-        try {
-            let res = await axios.get('/systemmsglist?sign=' + sign + '&userName=' + userName);
-            let { code, data, message } = res.data;
-            if (code === 200 && data.length > 0) { 
-                return { data };
-            }
-            if (ErrorMsg) {
-                ElMessage.error(message);
-            }
-            return { data: [] };
-        } catch(err) {
-            ElMessage.error('获取根源系统数据信息内部错误!!');
-            return { data: [] };
         }
     },
     // 用户文件夹及文件获取

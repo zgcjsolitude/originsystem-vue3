@@ -38,6 +38,24 @@ export const handleGetData = async (url, params, ErrorMsg = false, title = '', t
             return []
         }
 
+    } else if (type === 'one_object') {
+        try {
+            const res = await axios.get(url, { params });
+            const { code, data, message } = res.data;
+            if (code === 200 && data.length > 0) { 
+                return data[0];
+            }
+            if (ErrorMsg) {
+                ElMessage.error(message);
+            }
+            return {}
+        } catch(err) {
+            if (ErrorMsg) {
+                ElMessage.warning(`${title}接口内部错误!!`);
+            }
+            return {}
+        }
+
     } else if (type === 'cdur') {
         try {
             const res = await axios.get(url, { params });

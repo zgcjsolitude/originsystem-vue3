@@ -3,7 +3,7 @@ import utils from '@/utils/utils.js'
 // axios 
 import axios from "axios" 
 import qs from 'qs'
-axios.defaults.baseURL = GlobalConfig.ApiBaseUrl
+axios.defaults.baseURL = GlobalConfig.OsBaseUrlApi
 axios.defaults.timeout = 120000
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.transformRequest = (data) => {  // 发送参数前进行处理
@@ -30,9 +30,9 @@ app.use(Router)
 app.use(store)
 
 // globalProperties 全局对象
-import { ImgBaseUrl } from './assets/js/data-dictionary'
+import { RootUrl } from './assets/js/data-dictionary'
 import _ from 'lodash'
-app.config.globalProperties.$imgBaseUrl = ImgBaseUrl
+app.config.globalProperties.$imgBaseUrl = RootUrl
 app.config.globalProperties._ = _
 
 // element-plus
@@ -56,8 +56,8 @@ import 'md-editor-v3/lib/style.css';
 import VueLazyLoad from 'vue3-lazyload'
 app.use(VueLazyLoad, {
 	log: false,
-	loading: ImgBaseUrl + '/img/origin-system/picloading.jpg',
-	error: ImgBaseUrl + '/img/origin-system/nopic.jpg',
+	loading: RootUrl + '/img/picloading.jpg',
+	error: RootUrl + '/img/nopic.jpg',
 	lifecycle: {
 	  	loading: () => {},
 	  	error: () => {},

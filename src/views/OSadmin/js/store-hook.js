@@ -1,7 +1,7 @@
 import { ref, reactive, onMounted, toRefs, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStore } from "vuex";
-import { ImgBaseUrl } from '@/assets/js/data-dictionary';
+import { RootUrl } from '@/assets/js/data-dictionary';
 
 export const storeStateHook = function() {
     const store = useStore();

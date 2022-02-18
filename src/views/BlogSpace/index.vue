@@ -6,7 +6,7 @@
 
 <script>
 import NavViews from "./NavView.vue";
-import { navListOpt } from './js/data.js';
+import { navListOpt } from './js/lib.js';
 
 export default {
   	name: 'BlogSpaceIndex',

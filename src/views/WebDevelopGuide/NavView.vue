@@ -3,7 +3,7 @@
     	<template #header>
             <h1 class="header-icon">
                 <a @click="$router.push('/')">
-                    <img :src="$imgBaseUrl + '/img/origin-system/WebDevelopGuide/cjui-vue.png'" alt="">
+                    <img :src="$imgBaseUrl + '/img/WebDevelopGuide/cjui-vue.png'" alt="">
                     <span class="label-text">CJUI</span>
                 </a>
             </h1>

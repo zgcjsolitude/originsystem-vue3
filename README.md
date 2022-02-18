@@ -21,10 +21,11 @@
 15. 鼠标点击动画
 18. 重构路由埋点
 19. 数据库定时脚本
-20. 富文本文章编辑器 + markdown编辑器
+20. 富文本文章编辑器
 21. nginx代理
 22. token
 24. 博文编辑页面切换事件重复
+25. 删除博文空间 classify OVF1635433769903
 
 ## 长久需求
 1. 国际化策略完善
@@ -47,9 +48,11 @@
 12. localforage -- indexDB存储工具库
 13. echarts -- echarts图表
 14. lodash -- js工具函数库
+15. tinymce + @tinymce/tinymce-vue  -- tinymce富文本编辑器
 ### 本地public/libs 包
 1. jquery@3.5.1 + bootstrap@4.6.0
 2. particles@2.0.0
+3. tinymce@5.10.2
 ### 资源src/assets/libs 包
 1. font-awesome-4.7.0  -- font-awesome图标库
 

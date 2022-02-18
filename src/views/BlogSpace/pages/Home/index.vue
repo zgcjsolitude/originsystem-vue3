@@ -1,75 +1,66 @@
 <template>
-    <cjui-loading-progress class="BlogSpaceHomeIndex container-xl" :loading="blogListLoading">
-		<div v-if="stepSign === 'blogList'" class="row no-gutters blogList_container">
-			<cjui-wfrow class="col-12 blogList_box" ref="BlogSpaceHomeIndex" id="BlogSpaceHomeIndex" :count="5" :xs="1" :sm="3" :md="4" :lg="5">
-				<cjui-wfcol v-for="(item, i) in blogList" :key="i">
-					<BlogCard :data="item" :contentPadding="2" @clickTitle="openBlogContent(item)">
-					</BlogCard>
-				</cjui-wfcol>
-			</cjui-wfrow>
-		</div>
-		<div v-if="stepSign === 'blogContent'" class="row no-gutters blogList_container">
-			<div class="col-12 blogContent_box">
-				<BlogView :content="blogContent" />
-			</div>
-    	</div>
-    </cjui-loading-progress>
+    <div class="HomeIndex">
+        <el-page-header v-show="stepSign !== 'BlogList'" title="返回" content="博文详情" @back="goBack" />
+
+        <BlogList 
+            v-show="stepSign === 'BlogList'"
+			@openBlogContent="openBlogContent"
+        />
+
+        <BlogView 
+            v-if="stepSign === 'BlogView'"
+			:blogId="blogId"
+        />
+    </div>
 </template>
 
 <script>
-import BlogCard from '../../components/BlogCard.vue';
-import BlogView from '../../components/BlogView.vue';
-import { BlogListHook, BlogContentHook } from '../../js/data-hook.js';
-import { ref, reactive, onMounted, toRefs } from 'vue';
+import { reactive, ref } from 'vue';
+
+import BlogList from './BlogList/index.vue';
+import BlogView from './BlogView.vue';
 
 export default {
-  	name: 'BlogSpaceHomeIndex',
-	components:{
-		BlogCard,
-		BlogView
-	},
-	setup() {
-		const { blogListLoading, blogList, getBlogList } = BlogListHook();
+    components: {
+        BlogList,
+        BlogView
+    },
+    setup() {
+		const stepSign = ref('BlogList');
 
-		const { blogContent, getBlogContent } = BlogContentHook();
+        function goBack() {
+			stepSign.value = 'BlogList';
+        }
 
-		const stepSign = ref('blogList');
-		function changeStepSign(sign) {
-			stepSign.value = sign;
-		}
+		const blogId = ref('');
 		function openBlogContent(item) {
-			stepSign.value = 'blogContent';
-			getBlogContent(item.fileurl);
+			blogId.value = item._id;
+			stepSign.value = 'BlogView';
 		}
 
-		const BlogSpaceHomeIndex = ref(null);
-
-		onMounted(async () => {
-			await getBlogList();
-			BlogSpaceHomeIndex.value.initNodes();
-		});
-
-		return {
-			blogListLoading, blogList, getBlogList,
-			blogContent, getBlogContent,
-			stepSign, changeStepSign, openBlogContent,
-			BlogSpaceHomeIndex
-		}
-	}
+        return {
+            stepSign,
+            goBack,
+			blogId, openBlogContent
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-.blogList_container {
-	margin-top: 2rem;
+.HomeIndex {
+    margin-top: 20px;
 }
-.blogList_box {
-	padding: 0.5rem;
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.blogList_item {
-	margin: 0.5rem;
+
+.el-page-header {
+    margin-bottom: 10px;
+
+	:deep(.el-page-header__left) {
+		color: #999;
+	}
+	:deep(.el-page-header__content) {
+		font-size: 14px;
+		color: #606266;
+	}
 }
 </style>

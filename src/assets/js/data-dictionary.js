@@ -1,2 +1,3 @@
-export const ApiBaseUrl = GlobalConfig.ApiBaseUrl;
-export const ImgBaseUrl = GlobalConfig.RootUrl;
+export const RootUrl = GlobalConfig.RootUrl;
+export const OsBaseUrl = GlobalConfig.OsBaseUrl;
+export const OsBaseUrlApi = GlobalConfig.OsBaseUrlApi;

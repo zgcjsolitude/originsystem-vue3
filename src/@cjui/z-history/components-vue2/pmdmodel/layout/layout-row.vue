@@ -3,7 +3,7 @@
         <div class="layout-row-container" :class="[padding && 'is-padding']">
             <div class="layout-row-left" :style="{ width: leftWidth, height: leftHeight }">
 		        <slot name="left">
-            	<img src="/img/origin-system/nopic.jpg" alt="">
+            	<img src="/img/nopic.jpg" alt="">
 		        </slot>
             </div>
             <div class="layout-row-right" :style="{ height: leftHeight }" >

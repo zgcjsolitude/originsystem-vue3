@@ -10,59 +10,51 @@ export const menuListOpt = [
         icon: 'fa fa-qrcode', 
         label: 'BusinessManagement', 
         path: '',
-        authority: '4',
+        // authority: '4',
         children: [
             { 
                 icon: '', 
                 label: 'BMblogspace',
                 path: '/osadmin/BM-BlogSpace',
-                authority: '4-1',
+                // authority: '4-1',
+            },
+            { 
+                icon: '', 
+                label: 'BMbookworld',
+                path: '/osadmin/BM-BookWorld',
+                // authority: '4-2',
+            },
+            { 
+                icon: '', 
+                label: 'BMextractnote',
+                path: '/osadmin/BM-ExtractNote',
+                // authority: '4-3',
             },
         ] 
     },
     { 
         icon: 'fa fa-send', 
-        label: 'PersonalSpace', 
-        path: '',
-        authority: '2',
-        children: [ 
-            { 
-                icon: '', 
-                label: 'UserExtract',
-                path: '/osadmin/userextract',
-                authority: '2-2',
-            },
-            { 
-                icon: '', 
-                label: 'UserDataMsgSetting',
-                path: '/osadmin/UserDataMsg',
-                authority: '2-3',
-            },
-        ] 
-    },
-    { 
-        icon: 'fa fa-share-alt-square', 
         label: 'SystemCenter', 
         path: '',
-        authority: '3',
+        // authority: '3',
         children: [
             { 
                 icon: '', 
-                label: 'SystemExtract',
-                path: '/osadmin/systemextract',
-                authority: '3-1',
+                label: 'HomeSetting',
+                path: '/osadmin/HomeSetting',
+                // authority: '3-1',
             },
             { 
                 icon: '', 
-                label: 'SystemMsg',
-                path: '/osadmin/systemmsg',
-                authority: '3-2',
+                label: 'BusinessSetting',
+                path: '/osadmin/BusinessSetting',
+                // authority: '3-1',
             },
             { 
                 icon: '', 
                 label: 'PageManager',
                 path: '/osadmin/PageManager',
-                authority: '3-3',
+                // authority: '3-3',
             },
         ] 
     },
@@ -70,13 +62,13 @@ export const menuListOpt = [
         icon: 'fa fa-rebel', 
         label: 'SystemBuilder', 
         path: '',
-        authority: '1',
+        // authority: '1',
         children: [
             { 
                 icon: '', 
                 label: 'Administrator',
                 path: '/osadmin/BuilderUserSet',
-                authority: '1-1',
+                // authority: '1-1',
             },
         ] 
     },
@@ -84,13 +76,13 @@ export const menuListOpt = [
         icon: 'fa fa-bar-chart', 
         label: 'WebsiteGuard', 
         path: '',
-        authority: '4',
+        // authority: '4',
         children: [
             { 
                 icon: '', 
                 label: 'WebAccessMonitoring',
                 path: '/osadmin/WebAccessMonitoring',
-                authority: '4-1',
+                // authority: '4-1',
             },
         ] 
     }

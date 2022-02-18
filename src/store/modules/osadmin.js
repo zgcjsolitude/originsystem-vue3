@@ -6,7 +6,6 @@ const state = {
     // Admin公共列表
     vuexBlogClassList: [],
     vuexUserExtractTypeList: [],
-    vuexSystemExtractTypeList: [],
 }
 
 const getters = {
@@ -32,42 +31,9 @@ const mutations = {
     vuexLoadUserExtractTypeList(state, data) {
         state.vuexUserExtractTypeList = data;
     },
-    vuexLoadSystemExtractTypeList(state, data) {
-        state.vuexSystemExtractTypeList = data;
-    },
 }
 
 const actions = {
-    // 异步加载系统后台列表
-    vuexLoadAdminAllList({ dispatch }) {
-        dispatch('vuexLoadBlogClassList');  // 后台博客分组
-        dispatch('vuexLoadUserExtractTypeList');  // 后台用户博客分组
-        dispatch('vuexLoadSystemExtractTypeList');  // 后台系统博客分组
-    },
-    // 后台博客分组
-    async vuexLoadBlogClassList({ rootState, commit }) {
-        const { data } = await API._Return_usermsg({
-            sign: "blogClass",
-            userName: rootState.userName,
-        });
-        commit('vuexLoadBlogClassList', data);
-    },
-    // 后台用户摘录分组
-    async vuexLoadUserExtractTypeList({ rootState, commit }) {
-        const { data } = await API._Return_usermsg({
-            sign: "extractType",
-            userName: rootState.userName,
-        });
-        commit('vuexLoadUserExtractTypeList', data);
-    },
-    // 后台系统摘录分组
-    async vuexLoadSystemExtractTypeList({ rootState, commit }) {
-        let { data } = await API._Return_systemmsglist({
-            sign: "extractType",
-            userName: rootState.userName,
-        });
-        commit('vuexLoadSystemExtractTypeList', data);
-    }
 }
 
 

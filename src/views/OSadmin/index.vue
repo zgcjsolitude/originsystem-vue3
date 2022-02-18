@@ -51,14 +51,6 @@ export default {
         provide('userAuthority', userAuthority);
         provide('storeProfilesgetter', storeProfilesgetter);
 
-        const vuexLoadAdminAllList = () => {
-            store.dispatch("OsAdmin/vuexLoadAdminAllList");
-        };
-
-        onMounted(() => {
-            vuexLoadAdminAllList();
-        });
-
         return {
             keepList, noKeepList,
             storeProfilesgetter,

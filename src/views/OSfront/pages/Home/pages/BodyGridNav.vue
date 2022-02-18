@@ -20,6 +20,13 @@
                 <div style="font-size:22px;">BOOK WORLD</div>
             </div>
         </template>
+        
+        <template #posX5>
+            <div @click="$router.push('/BlogSpace/index')">
+                <div style="font-size:32px;">博客空间</div>
+                <div style="font-size:22px;">BLOG SPACE</div>
+            </div>
+        </template>
     </GridNav>
 </template>
 
@@ -28,6 +35,7 @@ import { computed } from 'vue';
 import { useStore } from "vuex";
 
 import GridNav from '@/@cjui/components/pcmodel/layout/GridNav.vue';
+import { OsBaseUrl } from '@/assets/js/data-dictionary';
 
 export default {
     components: {
@@ -43,7 +51,7 @@ export default {
 				sign: '',
 				num: 10
             }
-			let url = 'http://cjary.cn/view/pages/literary-display/' + '?';
+			let url = `${OsBaseUrl}/view/pages/literary-display/` + '?';
 			Object.keys(params).forEach(key => {
 				url += `${key}=${params[key]}&`
 			});

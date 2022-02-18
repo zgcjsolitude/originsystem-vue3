@@ -116,7 +116,7 @@ import API from '../../js/interface.js';
 import { useStore } from "vuex";
 import { nextTick, ref, computed, reactive, onMounted } from 'vue';
 import { ElMessage } from 'element-plus';
-import { ApiBaseUrl } from '@/assets/js/data-dictionary';
+import { OsBaseUrlApi } from '@/assets/js/data-dictionary';
 
 export default {
   	name: "UserDMsIndex",
@@ -260,7 +260,7 @@ export default {
             ElMessage.warning(message);
 		}
 
-		const actionUrl = ApiBaseUrl + "/userfile/blogupload";
+		const actionUrl = OsBaseUrlApi + "/userfile/blogupload";
 		const fileMsg = reactive({
 			userName: userName.value,
         	userEmail: userEmail.value,

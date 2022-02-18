@@ -1,10 +1,23 @@
 /*****
-  * =========== element-plus 夜间模式色彩 全局样式 ================ 
+  * =========== os-admin 全局样式 ================ 
   *** 
   * === 
 */
 
-@import '../import-list/variable.scss';
+@import '../variable.scss';
+
+// ---------------------------
+// default style
+// ---------------------------
+
+// tinymce dialog
+.tox.tox-silver-sink.tox-tinymce-aux {
+    z-index: 3000;
+}
+
+// ---------------------------
+// element cutsom style
+// ---------------------------
 
 // select popper
 .el-select__popper.osa-night.el-popper[role=tooltip][data-popper-placement^=bottom] {
@@ -29,8 +42,9 @@
     }
 }
 
-
+// ---------------------------
 // custom class
+// ---------------------------
 
 .OSA-flex-box {
     display: flex;
@@ -51,7 +65,6 @@
         margin-left: 10px;
     }
 }
-
 .OSA-form {
     padding: 50px;
 

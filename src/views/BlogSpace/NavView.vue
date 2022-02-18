@@ -20,10 +20,6 @@
                                 <a class="nav-link" @click="$router.push(item.path)">{{ item.name }}</a>
     	  	  	  	  	  	</li>
     	  	  	  	  	</ul>
-    	  	  	  	  	<form class="form-inline my-2 my-lg-0">
-    	  	  	  	  	  	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-    	  	  	  	  	  	<button class="btn btn-outline-white my-2 my-sm-0" type="submit">Search</button>
-    	  	  	  	  	</form>
     	  	  	  	</div>
     	  	  	</nav>
     	  	</div>
@@ -42,11 +38,13 @@
             <canvas id="myblogCanvas"></canvas>
         </div>
 
-        <el-backtop target=".BlogSpaceNavView"></el-backtop>
-
-        <div class="body">
-            <slot></slot>
+        <div class="container-xl">
+            <div class="body">
+                <slot></slot>
+            </div>
         </div>
+
+        <el-backtop target=".BlogSpaceNavView"></el-backtop>
   	</div>
 </template>
 
@@ -226,6 +224,9 @@ export default {
 	canvas {
   		display: block;
 	}
+}
+.body {
+    padding: .5rem 1rem;
 }
 
 :deep(.el-backtop) {

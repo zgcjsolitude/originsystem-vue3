@@ -226,8 +226,9 @@ export default {
     position: relative;
 }
 .cjui-wfrow {
-    width: 100%;
     position: relative;
+    margin-left: -8px;
+    margin-right: -8px;
 }
 .cjui-wfrow .cjui-wfcol-container {
     margin: 0 !important;

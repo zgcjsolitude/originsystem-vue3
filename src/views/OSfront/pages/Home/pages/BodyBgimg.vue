@@ -2,7 +2,7 @@
     <div class="body-bg-img">
         <template v-if="imgList.length > 0">
             <div v-for="(item, i) in imgList" :key="i" class="slideshow-image">
-                <img :src="item.Url" alt />
+                <img :src="item.url" alt />
             </div>
         </template>
 
@@ -17,25 +17,25 @@
 <script>
 import { ref, onMounted } from 'vue';
 
-import { ImgBaseUrl, ApiBaseUrl } from '@/assets/js/data-dictionary';
+import { RootUrl, OsBaseUrl } from '@/assets/js/data-dictionary';
 import service from '../js/service';
 
 export default {
     setup() {
         const imgDefaultList = [
-            { url: ImgBaseUrl + '/img/OSfront/home/bg_1.jpg' },
-            { url: ImgBaseUrl + '/img/OSfront/home/bg_2.jpg' },
-            { url: ImgBaseUrl + '/img/OSfront/home/bg_3.jpg' },
-            { url: ImgBaseUrl + '/img/OSfront/home/bg_4.jpg' },
+            { url: RootUrl + '/img/OSfront/home/bg_1.jpg' },
+            { url: RootUrl + '/img/OSfront/home/bg_2.jpg' },
+            { url: RootUrl + '/img/OSfront/home/bg_3.jpg' },
+            { url: RootUrl + '/img/OSfront/home/bg_4.jpg' },
         ];
 
 	    const imgList = ref([]);
 	    async function getHomeIndexBgPicList() {
-	    	const data = await service.Return_homeindexbgimg();
+	    	const data = await service.Return_homeindexbgimglist();
             imgList.value = data.map(el => {
                 return {
                     ...el,
-                    Url: ApiBaseUrl + el.Url,
+                    url: OsBaseUrl + el.url,
                 }
             });
 	    }

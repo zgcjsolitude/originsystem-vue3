@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import { ApiBaseUrl } from '@/assets/js/data-dictionary'
+import { OsBaseUrlApi } from '@/assets/js/data-dictionary'
 import API from '@/api/os-api'
 
 import OsAdmin from './modules/osadmin.js'
@@ -40,7 +40,7 @@ export const store = createStore({
 		},
 		// 获取用户头像
 		vuexUserHeaderImggetter: state => {
-			return ApiBaseUrl + state.userHeaderImg
+			return OsBaseUrlApi + state.userHeaderImg
 		},
 		// L2D看板娘状态
 		vuexL2Dlivegetter: state => {
