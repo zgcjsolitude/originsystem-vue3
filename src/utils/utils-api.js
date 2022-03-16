@@ -77,15 +77,15 @@ export const handleGetData = async (url, params, ErrorMsg = false, title = '', t
 export const handlePostData = async (url, params, ErrorMsg = false, title = '') => {
     try {
         const res = await axios.post(url, params);
-        const { code, message } = res.data;
+        const { code, data, message } = res.data;
         if (code !== 200 && ErrorMsg) {
             ElMessage.error(message);
         }
-        return { code, message };
+        return { code, data, message };
     } catch(err) {
         if (ErrorMsg) {
             ElMessage.warning(`${title}接口内部错误!!`);
         }
-        return { code: -1, message: `${title}接口内部错误!!` };
+        return { code: -1, data, message: `${title}接口内部错误!!` };
     }
 }

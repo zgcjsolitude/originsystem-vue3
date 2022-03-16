@@ -21,6 +21,19 @@ export const CjuiStyleRouter = [
         title: "样式收藏",
         list: [
             {
+                title: "颜色",
+                path: 'colorStyle',
+                fullPath: '/CjuiStyle/colorStyle',
+                component: () => import('@/views/WebDevelopGuide/pages/CjuiStyle/css/colorStyle.vue'),
+                show: true,
+                meta: {
+                    title: 'Cjui-Style',
+                    pageCodeMap: [
+                        { tagList: [], tagValueList: [], pageCode: '' }
+                    ]
+                },
+            },
+            {
                 title: "渐变",
                 path: 'gradientStyle',
                 fullPath: '/CjuiStyle/gradientStyle',

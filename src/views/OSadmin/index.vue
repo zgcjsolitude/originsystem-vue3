@@ -18,6 +18,7 @@ import { onMounted, computed, provide } from 'vue';
 const storeUserProvide = () => {
     const store = useStore();
 
+    const userId = computed(() => store.state.userId);
     const userName = computed(() => store.state.userName);
     const userEmail = computed(() => store.state.userEmail);
     const userPassword = computed(() => store.state.userPassword);
@@ -25,6 +26,7 @@ const storeUserProvide = () => {
     const storeProfilesgetter = computed(() => store.getters['OsAdmin/storeProfilesgetter']);
 
     return {
+        userId,
         userName, 
         userEmail, 
         userPassword, 
@@ -44,7 +46,8 @@ export default {
 
         const store = useStore();
 
-        const { userName, userEmail, userPassword, userAuthority, storeProfilesgetter } = storeUserProvide();
+        const { userId, userName, userEmail, userPassword, userAuthority, storeProfilesgetter } = storeUserProvide();
+        provide('userId', userId);
         provide('userName', userName);
         provide('userEmail', userEmail);
         provide('userPassword', userPassword);

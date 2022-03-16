@@ -25,6 +25,23 @@ export const updateLogOpt = {
     ]
 }
 
+export const colorOpt = {
+    routerPath: '/CjuiStyle/colorStyle',
+    list: [
+        {
+            title: '浅亮色系',
+            anchor: 'colorLight',
+            intro: '',
+            list: [
+                // {
+                //     name: "background: linear-gradient(45deg, #F78FAD, #FDEB82);",
+                //     color: "",
+                // },
+            ]
+        },
+    ]
+}
+
 export const gradientstOpt = {
     routerPath: '/CjuiStyle/gradientStyle',
     list: [
@@ -436,6 +453,7 @@ export const backgroundOpt = {
 }
 
 export const cjuiStyleList = [
+    colorOpt,
     gradientstOpt, 
     filterOpt,
     shapeOpt,

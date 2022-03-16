@@ -9,7 +9,7 @@
 		</router-view>
 		
     	<!-- 全局登录界面 -->
-    	<transition name="fade" enter-active-class="animate__animated animate__fadeInDownBig" leave-active-class="animate__animated animate__fadeOutLeftBig">
+    	<transition enter-active-class="animate__animated animate__fadeInDownBig" leave-active-class="animate__animated animate__fadeOutLeftBig">
     	  	<LoginDialog v-if="LoginDialogShow" @close="closeLoginDialog" />
     	</transition>
 	</osfront-nav-view>
@@ -49,15 +49,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  	transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  	opacity: 0;
-}
-</style>

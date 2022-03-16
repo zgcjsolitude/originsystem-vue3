@@ -15,23 +15,7 @@ export default [
                 },
             }, 
             {
-                path: 'BM-BlogSpace', component: () => import('@/views/OSadmin/pages/Business/BlogSpace/index.vue'),
-                meta: {
-                    requireAuth: false,
-                    pageCodeMap: [
-                    ]
-                },
-            },
-            {
-                path: 'BM-BookWorld', component: () => import('@/views/OSadmin/pages/Business/BookWorld/index.vue'),
-                meta: {
-                    requireAuth: false,
-                    pageCodeMap: [
-                    ]
-                },
-            },
-            {
-                path: 'BM-ExtractNote', component: () => import('@/views/OSadmin/pages/Business/ExtractNote/index.vue'),
+                path: 'BM-AppTextCollection', component: () => import('@/views/OSadmin/pages/BM-AppTextCollection/index.vue'),
                 meta: {
                     requireAuth: false,
                     pageCodeMap: [
@@ -62,6 +46,14 @@ export default [
                     requireAuth: false,
                     pageCodeMap: [
                         { tagList: [], tagValueList: [], pageCode: 'TUS1635435212159' }
+                    ]
+                },
+            }, 
+            {
+                path: 'SC-SystemTextCollection', component: () => import('@/views/OSadmin/pages/SC-SystemTextCollection/index.vue'),
+                meta: {
+                    requireAuth: false,
+                    pageCodeMap: [
                     ]
                 },
             }, 

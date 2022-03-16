@@ -136,6 +136,7 @@
 :deep(.el-drawer) {
     background: #243646;
     border-left: 1px solid darken($color: $brand-primary, $amount: 30%);
+    border-right: 1px solid darken($color: $brand-primary, $amount: 30%);
 
     .el-drawer__header {
         background: linear-gradient(33deg, #024770, #007276, #000c2a);

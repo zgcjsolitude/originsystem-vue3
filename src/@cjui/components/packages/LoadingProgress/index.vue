@@ -40,7 +40,7 @@ export default {
             type: String,
             default: ''
         },
-        modal: { // full fullscreen center
+        modal: { // full - 容器居中 fullscreen - 全屏居中 fullscreen-center - 全屏居中无遮罩
             type: String,
             default: ''
         },
@@ -158,7 +158,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 0;
+    z-index: 9;
 }
 .cjui-loading-progress--modal.is-modal-fullscreen {
     background: var(--cjuiLoadingModalColor);

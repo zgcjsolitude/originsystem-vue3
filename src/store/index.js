@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import { OsBaseUrlApi } from '@/assets/js/data-dictionary'
+import UserApi from '@/api/user-api'
 import API from '@/api/os-api'
 
 import OsAdmin from './modules/osadmin.js'
@@ -11,17 +12,18 @@ export const store = createStore({
 			storeLoading: false,  // 系统页面首次加载，store数据状态
             isLogin: false,
 		    // 登录用户信息
-		    userID: '',
+		    userId: '',
             userName: '游客（本地）',
             userPassword: '123456',
             userEmail: '123456789@qq.com',
+			userTel: '',
             userHeaderImg: '/private/users/temp/headpic.jpg',
             userGender: -1,
             userIntro: '',
             userBirthday: '',
             userStatus: false,
             userCreatedTime: '',
-            userChangedTime: '',
+            userUpdatedTime: '',
             userAuthority: -1,  // 权限
             // 看板娘帮助
             vuexL2Dlive: 'false', // 看板娘状态显示
@@ -58,27 +60,28 @@ export const store = createStore({
 		},
 		// 登录载入用户信息
 		storeLoginIn(state, data) {
-			state.userID = data._id
+			state.userId = data.userId
 			state.userName = data.name
-			state.userEmail = data.email
 			state.userPassword = data.password
-			state.userAuthority = data.authority
-			state.userHeaderImg = data.headimgurl
 			state.userGender = data.gender
-			state.userIntro = data.intro
+			state.userEmail = data.email
+			state.userTel = data.tel
+			state.userHeaderImg = data.headimgurl
 			state.userBirthday = data.birthday
+			state.userIntro = data.intro
+			state.userAuthority = data.authority
 			state.userStatus = data.status
 			state.userCreatedTime = data.createdTime
-			state.userChangedTime = data.changedTime
+			state.userUpdatedTime = data.updatedTime
 			state.isLogin = true
-			sessionStorage.setItem('userID', data._id)
+			sessionStorage.setItem('userId', data.userId)
 			sessionStorage.setItem('userName', data.name)
 			sessionStorage.setItem('userPassword', data.password)
 			sessionStorage.setItem('isLogin', 'true')
 		},
 		// 登出删除用户信息
 		storeLoginOut() {
-			sessionStorage.removeItem('userID')
+			sessionStorage.removeItem('userId')
 			sessionStorage.removeItem('userName')
 			sessionStorage.removeItem('userPassword')
 			sessionStorage.removeItem('isLogin')
@@ -132,53 +135,53 @@ export const store = createStore({
 			const OSlocalUserName = localStorage.getItem('OSlocalUserName');
 			const OSlocalUserPassword = localStorage.getItem('OSlocalUserPassword');
 			if (OSlocalUserName && OSlocalUserPassword) {
-				const { code, data } = await API._Login({
+				const { code, data } = await UserApi.User_login({
 					userName: OSlocalUserName,
 					userPassword: OSlocalUserPassword,
 				});
-				if (code === 200) {
-					commit('storeLoginIn', data);
+				if (code === 200 && data && data.length) {
+					commit('storeLoginIn', data[0]);
 				}
 			}
         },
 		// 已登录信息载入
 		async storeLoadUserMsg({ state, getters, commit }) {
-            let { code, data } = await API._Loginmsg({
-                userName: sessionStorage.userName,
+            const { code, data } = await UserApi.User_loginmsg({
+                userId: sessionStorage.userId,
                 userPassword: sessionStorage.userPassword
             });
-            if (code === 200) {
-                commit('storeLoginIn', data);
-                return
-            }
+			if (code === 200 && data && data.length) {
+				commit('storeLoginIn', data[0]);
+				return
+			}
             commit('storeLoginOut');
 		},
 		// 用户登录方法
 		async storeLogin({ state, getters, commit }, { name, password }) {
-            let { code, data } = await API._Login({
+            const { code, data } = await UserApi.User_login({
                 userName: name,
                 userPassword: password,
             });
-            if (code === 200) {
-                commit('storeLoginIn', data)
-            }
+			if (code === 200 && data && data.length) {
+				commit('storeLoginIn', data[0]);
+			}
             return { code, data }
         },
 		// 游客登录
 		async storeVisitorLogin({ state, getters, commit }) {
-            let { code, data } = await API._Login({
+            const { code, data } = await UserApi.User_login({
                 userName: '游客',
                 userPassword: '123456',
             });
-            if (code === 200) {
-                commit('storeLoginIn', data)
-            }
+			if (code === 200 && data && data.length) {
+				commit('storeLoginIn', data[0]);
+			}
             return { code, data }
         },
 		// 用户登出
         async storeLogout({ state, getters, commit }, router) {
             if (confirm("确认退出？")) {
-                let { code, data } = await API._Logout({ userName: state.userName })
+                const { code, data } = await UserApi.User_logout({ userId: state.userId, userName: state.userName, userPassword: state.userPassword })
                 if (code === 200) {
                     router.push({ path: "/index" })
                     commit('storeLoginOut')

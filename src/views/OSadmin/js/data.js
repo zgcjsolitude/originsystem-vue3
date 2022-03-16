@@ -14,21 +14,9 @@ export const menuListOpt = [
         children: [
             { 
                 icon: '', 
-                label: 'BMblogspace',
-                path: '/osadmin/BM-BlogSpace',
+                label: 'BMapptextcollection',
+                path: '/osadmin/BM-AppTextCollection',
                 // authority: '4-1',
-            },
-            { 
-                icon: '', 
-                label: 'BMbookworld',
-                path: '/osadmin/BM-BookWorld',
-                // authority: '4-2',
-            },
-            { 
-                icon: '', 
-                label: 'BMextractnote',
-                path: '/osadmin/BM-ExtractNote',
-                // authority: '4-3',
             },
         ] 
     },
@@ -55,6 +43,12 @@ export const menuListOpt = [
                 label: 'PageManager',
                 path: '/osadmin/PageManager',
                 // authority: '3-3',
+            },
+            { 
+                icon: '', 
+                label: 'SCSystemTextCollection',
+                path: '/osadmin/SC-SystemTextCollection',
+                // authority: '4-1',
             },
         ] 
     },
