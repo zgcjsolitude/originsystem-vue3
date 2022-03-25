@@ -31,57 +31,58 @@
 :deep(.el-input__inner),
 :deep(.el-textarea__inner) {
     background: #464a56;
-    border-color: darken($color: $brand-primary, $amount: 10%);
+    border: 1px solid darken($color: $brand-primary, $amount: 10%);
     color: #c3c3c3;
+    box-shadow: unset;
 }
 :deep(.el-input__inner:focus),
 :deep(.el-input__inner:hover),
 :deep(.el-textarea__inner:hover),
 :deep(.el-textarea__inner:focus) {
     color: #14a7b6;
-      border-color: $brand-primary;
+    border-color: $brand-primary;
 }
 
 // checked
 :deep(.el-checkbox__inner) {
-  border-color: darken($color: $brand-primary, $amount: 10%);
-  background-color: transparent;
+    border-color: darken($color: $brand-primary, $amount: 10%);
+    background-color: transparent;
 }
 :deep(.el-checkbox__label) {
-  color: darken($color: $brand-primary, $amount: 10%);
+    color: darken($color: $brand-primary, $amount: 10%);
 }
 :deep(.el-checkbox__input.is-checked .el-checkbox__inner),
 :deep(.el-checkbox__input.is-indeterminate .el-checkbox__inner) {
-  background-color: $brand-primary;
-  border-color: $brand-primary;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
 }
 :deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
-  color: lighten($color: $brand-primary, $amount: 10%);
+    color: lighten($color: $brand-primary, $amount: 10%);
 }
 
 // radio
 .el-radio__inner:hover {
-      border-color: $brand-primary;
+    border-color: $brand-primary;
 }
 .el-radio__input.is-checked + .el-radio__label {
     color: $brand-primary;
 }
 .el-radio__input.is-checked .el-radio__inner {
-      border-color: $brand-primary;
-      background: $brand-primary;
+    border-color: $brand-primary;
+    background: $brand-primary;
 }
 
 // tree
 :deep(.el-tree) {
-      background: transparent;
+    background: transparent;
 }
 :deep(.el-tree-node__content) {
-      color: $brand-primary;
+    color: $brand-primary;
 }
 :deep(.el-checkbox .el-checkbox__input.is-checked .el-checkbox__inner),
 :deep(.el-checkbox .el-checkbox__input.is-indeterminate .el-checkbox__inner) {
-     background-color: $brand-primary;
-     border-color: $brand-primary;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
 }
 
 // tabs
@@ -114,7 +115,7 @@
     box-shadow: 0 0 4px 2px rgba(150,150,150,0.1);
 
     .el-dialog__header {
-      background: linear-gradient(33deg, #024770, #007276, #000c2a);
+        background: linear-gradient(33deg, #024770, #007276, #000c2a);
     }
     .el-dialog__title,
     .el-dialog__headerbtn .el-dialog__close {
@@ -153,10 +154,11 @@
     $blackBgColor: #464a56;
 
     background: $blackBgColor;
-    border-color: darken($color: $brand-primary, $amount: 10%);
 
-    &::before,
-    &::after {
+    &.el-table--border::after,
+    .el-table__border-left-patch,
+    .el-table__inner-wrapper::before,
+    .el-table__inner-wrapper::after {
         background-color: darken($color: $brand-primary, $amount: 10%);
     }
 
@@ -168,6 +170,9 @@
     }
     tr {
         color: lighten($color: $brand-primary, $amount: 10%);
+    }
+    td {
+        background: transparent;
     }
     td,
     th.is-leaf {
@@ -224,12 +229,12 @@
     .el-pager li {
         background: transparent;
     }
-    .el-pager li:not(.disabled).active {
+    .el-pager li:not(.is-disabled).is-active {
         background-color: transparent;
         color: $brand-primary;
     }
     .btn-next .el-icon,
     .btn-prev .el-icon {
-      color: $brand-primary;
+        color: $brand-primary;
     }
 }

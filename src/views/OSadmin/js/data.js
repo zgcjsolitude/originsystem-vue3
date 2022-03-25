@@ -28,21 +28,9 @@ export const menuListOpt = [
         children: [
             { 
                 icon: '', 
-                label: 'HomeSetting',
+                label: 'SCHomeSetting',
                 path: '/osadmin/HomeSetting',
                 // authority: '3-1',
-            },
-            { 
-                icon: '', 
-                label: 'BusinessSetting',
-                path: '/osadmin/BusinessSetting',
-                // authority: '3-1',
-            },
-            { 
-                icon: '', 
-                label: 'PageManager',
-                path: '/osadmin/PageManager',
-                // authority: '3-3',
             },
             { 
                 icon: '', 
@@ -64,6 +52,12 @@ export const menuListOpt = [
                 path: '/osadmin/BuilderUserSet',
                 // authority: '1-1',
             },
+            // { 
+            //     icon: '', 
+            //     label: 'SBPageManager',
+            //     path: '/osadmin/PageManager',
+            //     // authority: '3-3',
+            // },
         ] 
     },
     { 

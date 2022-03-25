@@ -6,14 +6,14 @@ export const menuListOpt = [
         children: [],
     },
     {
-        label: 'Personal',
-        value: 'Personal',
-        path: '/originsystem/Personal',
+        label: 'BusinessColumn',
+        value: 'BusinessColumn',
+        path: '/originsystem/BusinessColumn',
         children: [
             {
-                label: 'BlogSpace',
-                value: 'BlogSpace',
-                path: '/BlogSpace'
+                label: 'TextCollection',
+                value: 'TextCollection',
+                path: '/TextCollection'
             },
             // {
             //     label: ' Myproject',

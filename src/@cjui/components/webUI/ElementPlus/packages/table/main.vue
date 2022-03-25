@@ -43,7 +43,7 @@ export default {
         // 表格
         height: {
             type: Number,
-            default: 100,
+            default: undefined,
         },
         border: {
             type: Boolean,

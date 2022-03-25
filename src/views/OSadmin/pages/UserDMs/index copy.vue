@@ -29,7 +29,7 @@
           @click="modifyFolderDialog = false"
           >取 消</cjui-button
         >
-        <cjui-button size="small" theme="Dlight_0">确 定</cjui-button>
+        <cjui-button theme="Dlight_0">确 定</cjui-button>
       </span>
     </el-dialog>
 

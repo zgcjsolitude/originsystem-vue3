@@ -1,0 +1,94 @@
+<template>
+	<el-dialog title="文章编辑器" :model-value="visible" fullscreen @open="openEvent" @close="closeEvent">
+		<TinymceEditor v-model:value="formModel.htmlText" :height="650" />
+
+        <div>
+            <el-button class="flex-item ml-auto" type="primary" @click="saveEvent">
+                保存
+            </el-button>
+        </div>
+	</el-dialog>
+</template>
+
+<script setup>
+import { reactive, toRefs, inject, ref } from 'vue';
+import { ElMessage } from 'element-plus';
+
+import TinymceEditor from '@/components/project/TinymceEditor/index.vue';
+
+import service from '../../../js/service';
+
+const props = defineProps({
+    visible: {
+        type: Boolean,
+        default: false,
+    },
+    formModelParams: {
+        type: Object,
+        default: () => {
+            return {
+                _action: "",
+                _title: "",
+            }
+        }
+    },
+});
+
+const emit = defineEmits(['update:visible']);
+
+const { formModelParams } = toRefs(props);
+
+const module = inject('module');
+const userId = inject('userId');
+const userPassword = inject('userPassword');
+const storeProfilesgetter = inject('storeProfilesgetter');
+
+const editBtnLoading = ref(false);
+const formModel = reactive({
+    title: '',
+    classifyId: '',
+    htmlText: '',
+});
+function clearFormModel() {
+    formModel.title = '';
+    formModel.classifyId = '';
+    formModel.htmlText = '';
+}
+function saveEvent() {
+    modifyFormModel();
+}
+
+async function getArticleMsg() {
+    const dataObj = await service.Return_modelarticle({ _id: formModelParams.value._id }, module.value);
+    Object.keys(formModel).forEach(key => {
+        if (dataObj[key]) {
+            formModel[key] = dataObj[key];
+        }
+    });
+}
+async function modifyFormModel() {
+    const { code, message } = await service.Modify_modelarticle({
+        userId: userId.value,
+        userPassword: userPassword.value,
+        _id: formModelParams.value._id,
+        id: formModelParams.value.id,
+        title: formModel.title,
+        classifyId: formModel.classifyId,
+        customText: '',
+        htmlText: formModel.htmlText,
+    }, module.value);
+    editBtnLoading.value = false;
+    if (code === 200) {
+        ElMessage.success(message);
+    }
+}
+
+function openEvent() {
+    getArticleMsg();
+}
+
+function closeEvent() {
+    emit('update:visible', false);
+    clearFormModel();
+}
+</script>

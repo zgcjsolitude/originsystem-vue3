@@ -2,8 +2,8 @@
       <div class="BuilderUserSet">
         <div class="BuilderUserSet-container" :class="vuexProfilesgetter">
             <div class="OSA-flex-box">
-                  <el-button class="flex-left" size="small" type="primary" @click="openAddUser">
-                      <i class="el-icon-plus"></i>
+                  <el-button class="flex-left" type="primary" @click="openAddUser">
+                      <el-icon><Plus /></el-icon>
                   </el-button>
             </div>
 
@@ -43,13 +43,13 @@
         <el-drawer v-model="userFormDrawer" :title="userForm._title + '用户'" @close="clearUserForm">
             <el-form ref="renForm" :model="userForm" :rules="userFormRule" label-width="110px">
                 <el-form-item v-if="userForm._action == 'add'" label="用户姓名" prop="name">
-                      <el-input size="small" v-model="userForm.name"></el-input>
+                      <el-input v-model="userForm.name"></el-input>
                 </el-form-item>
                 <el-form-item v-if="userForm._action == 'add'" label="用户邮箱" prop="email">
-                      <el-input size="small" v-model="userForm.email"></el-input>
+                      <el-input v-model="userForm.email"></el-input>
                 </el-form-item>
                 <el-form-item v-if="userForm._action == 'add'" label="用户密码" prop="password">
-                      <el-input size="small" v-model="userForm.password"></el-input>
+                      <el-input v-model="userForm.password"></el-input>
                 </el-form-item>
                 <el-form-item label="用户性别" prop="password">
                       <el-radio v-model="userForm.gender" label="男">男</el-radio>
@@ -74,6 +74,7 @@ import API from '../../../js/interface.js';
 import { useStore } from "vuex";
 import { ref, computed, reactive, onMounted } from 'vue';
 import { ElMessage } from 'element-plus';
+import { Plus } from '@element-plus/icons-vue';
 import { OsaElTableHook } from '@/views/OSadmin/components/ElTable/table-hook.js';
 import { storeStateHook } from '../../../js/store-hook.js';
 
@@ -129,24 +130,24 @@ export default {
                 slots: {
                     default: ({ row }) => {
                         return <div>
-                            <el-button size="small" type="primary" onClick={() => openModifyUser(row)}>
+                            <el-button type="primary" onClick={() => openModifyUser(row)}>
                                 修改
                             </el-button>
-                            <el-button size="small" type="success" onClick={() => authChange(row)}>
+                            <el-button type="success" onClick={() => authChange(row)}>
                                 授权
                             </el-button>
                             { 
                                 row.status 
                                 ? 
-                                <el-button size="small" type="warning" onClick={() => changeUserStatus(row, false)}>
+                                <el-button type="warning" onClick={() => changeUserStatus(row, false)}>
                                     禁止
                                 </el-button> 
                                 :
-                                <el-button size="small" type="success" onClick={() => changeUserStatus(row, true)}>
+                                <el-button type="success" onClick={() => changeUserStatus(row, true)}>
                                     恢复
                                 </el-button>
                             }
-                            <el-button size="small" type="danger" onClick={() => deleteUser(row)}>
+                            <el-button type="danger" onClick={() => deleteUser(row)}>
                                 删除
                             </el-button>
                         </div>

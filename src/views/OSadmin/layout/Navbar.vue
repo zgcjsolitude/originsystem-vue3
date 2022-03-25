@@ -10,8 +10,8 @@
 			
       		<el-tooltip content="情景模式切换" effect="dark" placement="bottom">
       		  	<div class="right-menu-item hover-effect">
-      		  	  	<i v-if="storeProfiles == 'day'" class="el-icon-picture" @click="changeProfiles('night')"></i>
-      		  	  	<i v-else class="el-icon-picture-outline" @click="changeProfiles('day')"></i>
+					<el-icon v-if="storeProfiles == 'day'" @click="changeProfiles('night')"><PictureFilled /></el-icon>
+					<el-icon v-else @click="changeProfiles('day')"><PictureRounded /></el-icon>
       		  	</div>
       		</el-tooltip>
 
@@ -49,9 +49,13 @@ import { useStore } from "vuex";
 import { computed, getCurrentInstance } from 'vue';
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { PictureRounded, PictureFilled } from '@element-plus/icons-vue';
 
 export default {
   	name: "NavBar",
+	components: {
+		PictureRounded, PictureFilled
+	},
 	setup() {
 		const store = useStore();
         const theme = computed(() => store.getters['OsAdmin/vuexProfilesgetter']);
@@ -134,6 +138,10 @@ export default {
 			width: 24px;
 			height: 24px;
 			margin-bottom: 6px;
+		}
+
+		.el-icon {
+			vertical-align: -0.25em;
 		}
   	}
 

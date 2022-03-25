@@ -10,7 +10,7 @@
     	<header v-if="headerShow" class="header">
 			<span class="header-left">
 				<slot name="headerLeft">
-      				<i v-if="leftIconShow" :class="leftIcon" @click="leftEvent"></i>
+					<el-icon v-if="leftIconShow" @click="leftEvent"><arrow-left-bold /></el-icon>
 				</slot>
 			</span>
 			<span class="header-center">
@@ -20,7 +20,7 @@
 			</span>
 			<span class="header-right">
 				<slot name="headerRight">
-      				<i v-if="rightIconShow" :class="rightIcon" @click="rightEvent"></i>
+					<el-icon v-if="rightIconShow" @click="rightEvent"><setting /></el-icon>
 				</slot>
 			</span>
 		</header>
@@ -32,8 +32,14 @@
 </template>     
 
 <script>
+import { ArrowLeftBold, Setting } from '@element-plus/icons-vue';
+
 export default {
 	name: "CjuiPMDlayoutHeader",
+	components: {
+		ArrowLeftBold,
+		Setting
+	},
 	props: {
         headerShow: {
 			type: Boolean,
@@ -47,18 +53,10 @@ export default {
 			type: Boolean,
 			default: true
 		},
-		leftIcon: {
-			type: String,
-			default: 'el-icon-arrow-left'
-		},
 		rightIconShow: {
 			type: Boolean,
 			default: true
 		},
-		rightIcon: {
-			type: String,
-			default: 'el-icon-setting'
-		}
 	},
   	data() {
   	  	return {
@@ -155,6 +153,7 @@ export default {
 	.header-right i {
 		cursor: pointer;
 	  	font-size: fontSizeRem(20);
+		vertical-align: fontSizeRem(-6);
 	}
 
 	.body {

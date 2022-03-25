@@ -36,7 +36,7 @@
 2. vue3-lazyload  -- 图片懒加载插件;
 3. sass  -- dart-scss;
 4. element-resize-detector  -- 元素宽度监听器
-6. element-plus + @element-plus/icons + @element-plus/icons-vue -- element-ui vue3版本及图标库
+6. element-plus + @element-plus/icons-vue -- element-ui vue3版本及图标库
 7. screenfull -- screenfull全屏触发器，目前依赖包screenfull版本>5，在vue中全屏功能无效，请安装指定版本4.2.1
 8. @vitejs/plugin-vue-jsx -- JSX语法支持
 9. animate.css -- 过度动画

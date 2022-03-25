@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import AppTextCollection from '../../components/AppTextCollection/index.vue';
+import AppTextCollection from '../../../TextCollection/pc-pages/index.vue';
 </script>

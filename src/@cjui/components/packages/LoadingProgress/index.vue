@@ -4,7 +4,7 @@
 
         <div v-show="loading" class="cjui-loading-progress--modal"
             :class="[
-                modal ? 'is-modal-'+ modal : ''
+                modal ? 'is-modal-'+ modal : '',
             ]">
             <div class="modal-container">
                 <div class="modal-box">
@@ -36,31 +36,31 @@ export default {
             type: Boolean,
             default: false,
         },
-        theme: {
+        theme: {  // loading 主题
             type: String,
             default: ''
         },
-        modal: { // full - 容器居中 fullscreen - 全屏居中 fullscreen-center - 全屏居中无遮罩
+        modal: { // 默认作为子元素追加在容器内最后位置 full - 容器居中 fullscreen - 全屏居中 fullscreen-center - 全屏居中小遮罩 
             type: String,
             default: ''
         },
-        status: {
+        status: {  // 数字进度快进值
             type: Number,
             default: 0,
         },
-        speed: {
+        action: {  // 是否开启数字进度
+            type: Boolean,
+            default: false,
+        },
+        speed: {  // 数字进度速度
             type: Number,
             default: 30,
         },
-        fontshow: {
+        fontshow: {  // 是否显示载入文本
             type: Boolean,
             default: false,
         },
-        action: {
-            type: Boolean,
-            default: false,
-        },
-        message:  {
+        message:  {  // 载入文本
             type: String,
             default: '',
         },
@@ -169,7 +169,7 @@ export default {
     right: 0;
     z-index: 3000;
 }
-.cjui-loading-progress--modal.is-modal-center {
+.cjui-loading-progress--modal.is-modal-fullscreen-center {
     position: fixed;
     top: 0;
     bottom: 0;

@@ -23,29 +23,11 @@ export default [
                 },
             },
             {
-                path: 'HomeSetting', component: () => import('@/views/OSadmin/pages/SystemCenter/HomeSetting/index.vue'),
+                path: 'HomeSetting', component: () => import('@/views/OSadmin/pages/SC-HomeSetting/index.vue'),
                 meta: {
                     requireAuth: false,
                     pageCodeMap: [
                         { tagList: [], tagValueList: [], pageCode: '' }
-                    ]
-                },
-            }, 
-            {
-                path: 'BusinessSetting', component: () => import('@/views/OSadmin/pages/SystemCenter/BusinessSetting/index.vue'),
-                meta: {
-                    requireAuth: false,
-                    pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: '' }
-                    ]
-                },
-            }, 
-            {
-                path: 'PageManager', component: () => import('@/views/OSadmin/pages/SystemCenter/PageManager/index.vue'),
-                meta: {
-                    requireAuth: false,
-                    pageCodeMap: [
-                        { tagList: [], tagValueList: [], pageCode: 'TUS1635435212159' }
                     ]
                 },
             }, 
